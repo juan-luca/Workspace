@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1584205420 source:c:\users\juan\desktop\utn\programacion\workspace\clase 4 lab\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1586264384 source:c:\users\juan\desktop\utn\programacion\workspace\clase 4 lab\clase4.c
+	<stdio.h>
+	<stdlib.h>
+
+1586264338 source:c:\users\juan\desktop\utn\programacion\workspace\clase 4 lab\factorial.c
+	<stdio.h>
+	<stdlib.h>
+
