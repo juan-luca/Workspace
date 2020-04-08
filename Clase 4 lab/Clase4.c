@@ -4,15 +4,15 @@
 int getInt(char mensaje[], int min, int max);
 float getFloat(char mensaje[], float min, float max);
 char getChar(char mensaje[], char valida1, char valida2);
-int esVerdadero(int numero);
+int esPar(int numero);
 
 int main()
 {
 
-   int numero, total=0,flag=0;
+   int numero, total=0,flag=0, res=0;
 
     numero = getInt("Ingrese un numero:",0,0);
-    for(numero; numero!=0 ;numero--)
+    /*for(numero; numero!=0 ;numero--)
     {
         printf(" %d,",numero);
         if(flag==0)
@@ -25,12 +25,14 @@ int main()
             total=total*numero;
         }
 
-    }
-    printf("\nEl total es: %d",total);
+    }*/
+
+    res=factorialRecursivo(numero);
+    printf("\nEl total es: %d",res);
 
     /*
 
-    if(esVerdadero(numero)==1)
+    if(esPar(numero)==1)
     {
         printf("es par");
 
@@ -45,7 +47,20 @@ int main()
 
     return 0;
 }
+int factorialRecursivo(int numero)
+{
+    int resultado;
 
+    if(numero==0)
+    {
+        resultado=1;
+    }
+    else
+    {
+        resultado = numero * factorialRecursivo(numero-1);
+    }
+    return resultado;
+}
 int getInt(char mensaje[], int min, int max)
 {
     int ValorEntero=0;
@@ -73,7 +88,7 @@ int getInt(char mensaje[], int min, int max)
     return ValorEntero;
 }
 
-int esVerdadero(int numero)
+int esPar(int numero)
 {
 
     if(numero%2 == 0)
