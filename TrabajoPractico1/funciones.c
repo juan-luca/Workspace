@@ -1,10 +1,3 @@
-/**
-*-descripcion breve
-*
-*-parametros q recibe
-*
-*-lo que devuelve
-*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,10 +16,16 @@ int getInt(char mensaje[], int min, int max)
     }
 
     printf("%s \n",mensaje);
+    fflush(stdin);
     scanf("%d",&ValorEntero);
+
+
+
+
+
     if(noValidar==0)
     {
-        while(ValorEntero < min || ValorEntero > max)
+    while(ValorEntero < min || ValorEntero > max)
     {
         system("color 4F");
         printf("Error, %s \n",mensaje);
@@ -44,7 +43,7 @@ int getInt(char mensaje[], int min, int max)
 float getFloat(char mensaje[], float min, float max)
 {
     float numero;
-    int ValorEntero=0, noValidar=0, temp, tt;
+    int ValorEntero=0, noValidar=0, temp;
     if(min==0 && max==0)
     {
         noValidar=1;
@@ -156,73 +155,101 @@ int factorialRecursivo(int numero)
 
 }
 
-float sumar (float n1, float n2, int flotante)
+float sumar (float num[], int tam)
 {
-    int in1=n1, in2=n2;
-    if(flotante==1)
+     int i=0;
+    float res=0;
+
+    for(i=0; i< tam ; i++ )
     {
-        float fres=n1+n2;
-        return fres;
-    }else
-    {
-        int ires=in1+in2;
-        /*printf("\n n1 %d -- n2 %d---------res= %d\n",in1,in2,ires);
-        system("pause");*/
-        return ires;
+
+
+
+            if(res==0 )
+            {
+                res=num[i];
+            }else
+            {
+                res=res+num[i];
+            }
+
+
     }
+
+
+
+        return res;
+
 
 }
 
-float restar (float n1, float n2, int flotante)
+float restar (float num[], int tam)
 {
-    int in1=n1, in2=n2;
-    if(flotante==1)
+
+    int i=0;
+    float res=0;
+
+    for(i=0; i< tam ; i++ )
     {
-        float fres=n1-n2;
-        return fres;
-    }else
-    {
-        int ires=in1-in2;
-        /*printf("\n n1 %d -- n2 %d---------res= %d\n",in1,in2,ires);
-        system("pause");*/
-        return ires;
+
+
+
+            if(res==0 )
+            {
+                res=num[i];
+            }else
+            {
+                res=res-num[i];
+            }
+
+
     }
+
+
+
+        return res;
+
 
 }
 
-float producto (float n1, float n2, int flotante)
+
+float producto (float num[], int flotante, int tam)
 {
-    int in1=n1, in2=n2;
-    if(flotante==1)
+    int i=0;
+    float res=0;
+
+    for(i=0; i< tam ; i++ )
     {
-        float fres=n1*n2;
-        return fres;
-    }else
-    {
-        int ires=in1*in2;
-        /*printf("\n n1 %d -- n2 %d---------res= %d\n",in1,in2,ires);
-        system("pause");*/
-        return ires;
+
+
+
+            if(res==0 )
+            {
+                res=num[i];
+            }else
+            {
+                res=res*num[i];
+            }
+
+
     }
+
+
+
+        return res;
+
 
 }
 
-float division (float n1, float n2)
+float division (float num[2])
 {
 
-    if(n2!=0)
-    {
+   //solo debe poder recibir un array de maximo 2 posiciones
 
-        float fres=n1/n2;
-       /* printf("\n n1 %f -- n2 %f---------res= %f\n",n1,n2,fres);
-        system("pause");*/
+       float fres=num[0]/num[1];
+
         return fres;
 
-
-   }else
-    {
-        return -999999999;
-    }
 
 }
 

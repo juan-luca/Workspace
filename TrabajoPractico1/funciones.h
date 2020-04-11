@@ -40,12 +40,53 @@ int factorialRecursivo(int numero);
  * \return - resultado total del factoreo
  *
  */
- float sumar (float n1, float n2, int flotante);
+ float sumar (float num[], int tam);
+ /** \Recibe un array y suma todos los numeros del array
+ *
+ * \float - array a sumar
+ \Int - tamaño del array
+ * \return - resultado de la suma
+ *
+ */
 
- float restar (float n1, float n2, int flotante);
+ float restar (float num[], int tam);
+/** \Recibe un array y resta todos los numeros del array
+ *
+ * \float - array a restar
+ \Int - tamaño del array
+ * \return - resultado de la resta
+ *
+ */
 
- float producto (float n1, float n2, int flotante);
+ float producto (float num[], int flotante, int tam);
+ /** \Recibe un array y multiplica todos los numeros del array
+ *
+ * \float - array a multiplicar
+ \Int - si es float o int
+ \Int - tamaño del array
+ * \return - resultado del producto
+ *
+ */
 
- float division (float n1, float n2);
+ float division (float num[]);
+ /** \Recibe un array y divide el primero por el segundo
+ *
+ * \float - array a restar
+ * \return - resultado de la division
+ *
+ */
 
  void mostrar(float suma, float resta, float prod, float divi, int factA, int factB, int flotante, int divisionCero, float fnumA, float fnumB);
+  /** \Recibe los resultados y los muestra
+ *
+ * \float - resultado de la suma
+ * \float - resultado de la resta
+ * \float - resultado del producto
+ * \float - resultado de la division
+ * \int - resultado del factoreo A
+ * \int - resultado del factoreo B
+ * \int - flag si divide por 0 o no
+ * \float - numero A
+ * \float - numero B
+ *
+ */
