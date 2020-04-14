@@ -5,14 +5,12 @@
 #include "funciones.h"
 #include <ctype.h>
 #include <conio.h>
+#include <windows.h>
 
 int main()
 {
     int opcion, flagA=0, flagB=0, divisionCero=0, inum[2], isuma, iprod, iresta, factA, factB, entero, flotante, flag3=0;
 float suma, prod, divi, resta, fnum[2], ffnum[2];
-
-
-
 
     while(opcion!=6)
     {
@@ -101,8 +99,8 @@ float suma, prod, divi, resta, fnum[2], ffnum[2];
                                 printf("    a) Calcular la suma (%d+y)\n",inum[0]);
                                 printf("    b) Calcular la resta (%d-y) \n",inum[0]);
                                 printf("    c) Calcular la division (%d/y)\n",inum[0]);
-                                printf("    d) Calcular la multiplicacion (%d*y)\n",inum[0]);
-                                printf("    e) Calcular el factorial (%d!) (%y!)\n", inum[0]);
+                                printf("    d) Calcular la multiplicacion (%d*y) \n",inum[0]);
+                                printf("    e) Calcular el factorial (%d!) (%y!) \n", inum[0]);
                                 }
 
                         }else
@@ -122,8 +120,8 @@ float suma, prod, divi, resta, fnum[2], ffnum[2];
                                 printf("    a) Calcular la suma (%d+%d)\n",inum[0],inum[1]);
                                 printf("    b) Calcular la resta (%d-%d) \n",inum[0],inum[1]);
                                 printf("    c) Calcular la division (%d/%d)\n",inum[0],inum[1]);
-                                printf("    d) Calcular la multiplicacion (%d*%d)\n",inum[0],inum[1]);
-                                printf("    e) Calcular el factorial (%d!) (%d!)\n", inum[0],inum[1] );
+                                printf("    d) Calcular la multiplicacion (%d*%d) \n",inum[0],inum[1]);
+                                printf("    e) Calcular el factorial (%d!) (%d!) \n", inum[0],inum[1] );
                                 }
 
                             }
@@ -188,6 +186,7 @@ float suma, prod, divi, resta, fnum[2], ffnum[2];
                         entero=0;
                         flotante=1;
                 }
+                system("cls");
                 flagA=1;
 
                 break;
@@ -229,6 +228,7 @@ float suma, prod, divi, resta, fnum[2], ffnum[2];
                         entero=0;
                         flotante=1;
                 }
+                system("cls");
                 flagB=1;
                 break;
 
@@ -270,9 +270,7 @@ float suma, prod, divi, resta, fnum[2], ffnum[2];
                         factA=0;
                         factB=0;
                         flag3=1;
-                        system("cls");
-                        system("color 20");
-                        printf("\nCalculado!\n");
+                        setSucces("Calculado!",1);
 
                     }else
                     {
@@ -292,44 +290,39 @@ float suma, prod, divi, resta, fnum[2], ffnum[2];
                         iprod=producto(fnum, flotante, itam);
                         factA=factorialRecursivo(inum[0]);
                         factB=factorialRecursivo(inum[1]);
-                        system("cls");
-                        system("color 20");
-                        printf("\nCalculado!\n");
+                        setSucces("Calculado",1);
                         flag3=1;
                     }
                 }
                 else
                 {
-                    system("cls");
-                    system("color 4F");
-                    printf("\n Error, primero debe ingresar los 2 operandos.\n");
+
+                    setError("Error, primero debe ingresar los 2 operandos.",1);
                 }
 
                 break;
             case 4:
                 if(flag3==1)
                 {
-
+                    system("cls");
 
                     if(flotante==1)
                     {
-                        system("cls");
+
                         printf("\n4)Informar resultados\n");
                         mostrar(suma,resta,prod,divi,factA,factB,flotante,divisionCero,fnum[0],fnum[1]);
                     }else
                     {
-                        system("cls");
+
                         printf("\n4)Informar resultados\n");
                         mostrar(isuma,iresta,iprod,divi,factA,factB,flotante,divisionCero,inum[0],inum[1]);
                     }
                 }else
                 {
-                    system("cls");
-                    system("color 4F");
-                    printf("\n Error, primero debe calcular todo.\n");
+                    setError("Error, primero debe calcular todo.",1);
                 }
 
-
+            system("cls");
                 break;
             case 5:
 
@@ -346,20 +339,18 @@ float suma, prod, divi, resta, fnum[2], ffnum[2];
                     factA=0;
                     factB=0;
                     fflush(stdin);
-                    printf("\nSe reinicio la calculadora.\n");
+                    setSucces("Se reinicio la calculadora.",1);
 
 
                 break;
             case 6:
-                printf("Hasta luego!\n");
+                setSucces("Hasta luego!",1);
                 break;
 
 
         }
 
-        system("pause");
-        system("color 0F");
-        system("cls");
+
     }
 
 

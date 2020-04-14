@@ -1,8 +1,49 @@
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "funciones.h"
 #include <ctype.h>
+#include <conio.h>
+#include <windows.h>
+
+
+void setSucces(char mensaje[],int clean)
+{
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, 175);// 7 es el color normal de la consola, 175 es verde con blanco
+    printf("\n%s \n",mensaje);
+    SetConsoleTextAttribute(hConsole, 7);
+
+    if(clean!=0)
+    {
+        system("pause");
+       system("cls");
+    }
+
+}
+
+void setError(char mensaje[], int clean)
+{
+
+/*
+  for(int k = 1; k < 255; k++)
+  {
+    SetConsoleTextAttribute(hConsole, k);
+    printf("%d llllllllllllllllllllllllllll\n");
+  }
+  system("pause");*/
+
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, 79);// 7 es el color normal de la consola, 79 rojo y blanco
+    printf("Error, %s \n",mensaje);
+    SetConsoleTextAttribute(hConsole, 7);
+
+    if(clean!=0)
+    {
+        system("pause");
+       system("cls");
+    }
+}
 
 int getInt(char mensaje[], int min, int max)
 {
@@ -27,11 +68,9 @@ int getInt(char mensaje[], int min, int max)
     {
     while(ValorEntero < min || ValorEntero > max)
     {
-        system("color 4F");
-        printf("Error, %s \n",mensaje);
+        setError(mensaje,0);
         scanf("%d",&ValorEntero);
     }
-    system("color 0f");
     }
 
 
@@ -76,12 +115,10 @@ if(noValidar==0)
     {
         while(numero < min || numero > max)
         {
-            system("color 4F");
-        printf("Error, %s \n",mensaje);
+            setError(mensaje,0);
         scanf("%f",&numero);
         }
 }
-system("color 0F");
 
 
      return numero;
@@ -95,7 +132,7 @@ char getChar(char mensaje[], char valida1, char valida2)
 
     if(valida1=="" && valida2=="")
     {
-        printf("No valida");
+
         noValidar=1;
     }
 
@@ -105,13 +142,13 @@ char getChar(char mensaje[], char valida1, char valida2)
     if(noValidar==0)
     {
         while(cadena != valida1 & cadena != valida2)
-        {system("color 4F");
-        printf("Error, %s \n",mensaje);
+        {
+            setError(mensaje,0);
         fflush(stdin);
         scanf("%c",&cadena);
 
         }
-        system("color 0F");
+
     }
 
 
@@ -271,7 +308,7 @@ void mostrar(float suma, float resta, float prod, float divi, int factA, int fac
     }
     if(divisionCero==1)
     {
-        printf("\nNo se pudo realizar la division ya que se intento dividir por 0...");
+        setError("No se pudo realizar la division ya que se intento dividir por 0...",0);
 
     }else
     {
@@ -284,19 +321,28 @@ void mostrar(float suma, float resta, float prod, float divi, int factA, int fac
 
     if(factA==0)
     {
-        printf("\nEl factorial %d no pudo ser realizado por numeros incompatibles...",inumA);
+
+
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 79);// 7 es el color normal de la consola, 79 rojo y blanco
+        printf("\nEl factorial de %f no pudo ser realizado por numeros incompatibles...",inumA);
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
     }else
     {
         printf("\nEl factorial de %d es: %d",inumA,factA);
     }
+
     if(factB==0)
     {
-        printf("\nEl factorial %d no pudo ser realizado por numeros incompatibles...",inumB);
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 79);// 7 es el color normal de la consola, 79 rojo y blanco
+        printf("\nEl factorial de %f no pudo ser realizado por numeros incompatibles...",inumB);
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
     }else
     {
         printf("\nEl factorial de %d es: %d",inumB,factB);
     }
+
     printf("\n");
+    system("pause");
 }
 
 

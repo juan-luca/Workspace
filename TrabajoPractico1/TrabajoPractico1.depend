@@ -1,22 +1,26 @@
 # depslib dependency file v1.0
-1586622346 source:c:\users\juan\desktop\utn\programacion\workspace\trabajopractico1\funciones.c
-	<stdio.h>
-	<stdlib.h>
-	"funciones.h"
-	<ctype.h>
-
-1586623167 c:\users\juan\desktop\utn\programacion\workspace\trabajopractico1\funciones.h
-
-1586271881 source:c:\users\juan\desktop\utn\programacion\workspace\trabajopractico1\main.c
-	<stdio.h>
-	<stdlib.h>
-	"funciones.h"
-
-1586622636 source:c:\users\juan\desktop\utn\programacion\workspace\trabajopractico1\calculadora.c
+1586790091 source:c:\users\juan\desktop\utn\programacion\workspace\trabajopractico1\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
 	"funciones.h"
 	<ctype.h>
 	<conio.h>
+	<windows.h>
+
+1586790944 c:\users\juan\desktop\utn\programacion\workspace\trabajopractico1\funciones.h
+
+1586271881 source:c:\users\juan\desktop\utn\programacion\workspace\trabajopractico1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1586789842 source:c:\users\juan\desktop\utn\programacion\workspace\trabajopractico1\calculadora.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"funciones.h"
+	<ctype.h>
+	<conio.h>
+	<windows.h>
 

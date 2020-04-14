@@ -88,5 +88,21 @@ int factorialRecursivo(int numero);
  * \int - flag si divide por 0 o no
  * \float - numero A
  * \float - numero B
+ * ---- no retorna nada
+ */
+
+ void setError(char mensaje[],int clean);
+  /** \Recibe muestra un mensaje subrayado en rojo
+ *
+ * \char - Mensaje a mostrar
+ * \int - flag que limpia la pantalla o no
+ *
+ */
+
+ void setSucces(char mensaje[],int clean);
+ /** \Recibe muestra un mensaje subrayado en verde
+ *
+ * \char - Mensaje a mostrar
+ * \int - flag que limpia la pantalla o no
  *
  */
