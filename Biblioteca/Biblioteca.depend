@@ -4,5 +4,14 @@
 	<stdlib.h>
 	"funciones.h"
 
-1586269606 c:\users\juan\desktop\utn\programacion\workspace\biblioteca\funciones.h
+1586866618 c:\users\juan\desktop\utn\programacion\workspace\biblioteca\funciones.h
+
+1586866610 source:c:\users\juan\desktop\utn\programacion\workspace\biblioteca\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"funciones.h"
+	<ctype.h>
+	<conio.h>
+	<windows.h>
 

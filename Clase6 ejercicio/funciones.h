@@ -117,4 +117,3 @@ void mostrarVectorInt(int vector[], int tam);
 
 int ordenarVectorInt(int vector[], int tam, char orden);
 void getString(char dato[], char mensaje[]);
- void getStringUpper(char dato[], char mensaje[]);

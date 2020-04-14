@@ -420,36 +420,9 @@ void getString(char dato[], char mensaje[])
 
      dato[len-1] = '\0';
 }
-
- void getStringUpper(char dato[], char mensaje[])
-{
-    int len, i;
-     printf("%s", mensaje);
-        fflush(stdin);
-
-     fgets(dato, 30, stdin);
-
-     len = strlen(dato);
-
-     dato[len-1] = '\0';
-
-    dato[0]= toupper(dato[0]);
-    while(dato[len]!='\0')
-    {
-
-       len++;
-    }
-
-    for(i=0;i<len;i++)
-    {
-
-        if(dato[i]==' ')
-        {
-           dato[i+1]= toupper(dato[i+1]);
-
-        }
-    }
-}
+ /*windows
+    gets(palabra);
+    */
 
 
 
