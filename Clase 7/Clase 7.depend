@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1586887386 source:c:\users\juan\desktop\utn\programacion\workspace\clase 7\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"funciones.h"
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1587387288 c:\users\juan\desktop\utn\programacion\workspace\clase 7\funciones.h
+
+1587396324 source:c:\users\juan\desktop\utn\programacion\workspace\clase 7\main.c
+	<stdio.h>
+
+1587395514 source:c:\users\juan\desktop\utn\programacion\workspace\clase 7\codigo profesor.c
+	<stdio.h>
+

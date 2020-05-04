@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1588087055 source:c:\users\juan\desktop\utn\programacion\workspace\clase9lab\alumno.c
+	"Alumno.h"
+
+1588087480 c:\users\juan\desktop\utn\programacion\workspace\clase9lab\alumno.h
+	<stdio.h>
+
+1588084484 source:c:\users\juan\desktop\utn\programacion\workspace\clase9lab\main.c
+	<stdlib.h>
+	"Alumno.h"
+
