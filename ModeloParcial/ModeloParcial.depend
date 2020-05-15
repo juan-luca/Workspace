@@ -1,0 +1,87 @@
+# depslib dependency file v1.0
+1589233198 source:c:\users\juan\desktop\utn\programacion\workspace\modeloparcial\generalcommands.c
+	"GeneralCommands.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589233197 c:\users\juan\desktop\utn\programacion\workspace\modeloparcial\generalcommands.h
+
+1589150086 source:c:\users\juan\desktop\utn\programacion\workspace\modeloparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+	"MenuABM.h"
+
+1589233076 source:c:\users\juan\desktop\utn\programacion\workspace\modeloparcial\menuabm.c
+	"MenuABM.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589141626 c:\users\juan\desktop\utn\programacion\workspace\modeloparcial\menuabm.h
+	"GeneralCommands.h"
+	"Musico.h"
+	"Orquesta.h"
+	"Instrumento.h"
+
+1589138690 c:\users\juan\desktop\utn\programacion\workspace\modeloparcial\tiposorquesta.h
+
+1589149664 c:\users\juan\desktop\utn\programacion\workspace\modeloparcial\orquesta.h
+
+1589151754 c:\users\juan\desktop\utn\programacion\workspace\modeloparcial\instrumento.h
+
+1589233076 source:c:\users\juan\desktop\utn\programacion\workspace\modeloparcial\instrumento.c
+	"Instrumento.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589233076 source:c:\users\juan\desktop\utn\programacion\workspace\modeloparcial\orquesta.c
+	"Orquesta.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589233076 source:c:\users\juan\desktop\utn\programacion\workspace\modeloparcial\musico.c
+	"Musico.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589148192 c:\users\juan\desktop\utn\programacion\workspace\modeloparcial\musico.h
+
+1589233076 source:c:\users\juan\desktop\utn\programacion\workspace\modeloparcial\tiposorquesta.c
+	"TiposOrquesta.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+

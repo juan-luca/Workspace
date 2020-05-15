@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1589254507 source:c:\users\juan\desktop\utn\programacion\workspace\nuevo parcial mascota\clientes.c
+	"clientes.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589250491 c:\users\juan\desktop\utn\programacion\workspace\nuevo parcial mascota\clientes.h
+	"GeneralCommands.h"
+
+1589250491 c:\users\juan\desktop\utn\programacion\workspace\nuevo parcial mascota\generalcommands.h
+
+1589250491 source:c:\users\juan\desktop\utn\programacion\workspace\nuevo parcial mascota\generalcommands.c
+	"GeneralCommands.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1584205420 source:c:\users\juan\desktop\utn\programacion\workspace\nuevo parcial mascota\main.c
+	<stdio.h>
+	<stdlib.h>
+

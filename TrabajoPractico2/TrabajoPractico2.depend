@@ -1,0 +1,53 @@
+# depslib dependency file v1.0
+1589061853 source:c:\users\juan\desktop\utn\programacion\workspace\trabajopractico2\generalcommands.c
+	"GeneralCommands.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589496437 c:\users\juan\desktop\utn\programacion\workspace\trabajopractico2\generalcommands.h
+
+1589498036 source:c:\users\juan\desktop\utn\programacion\workspace\trabajopractico2\arrayemployees.c
+	"ArrayEmployees.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589505450 c:\users\juan\desktop\utn\programacion\workspace\trabajopractico2\arrayemployees.h
+	<stdio.h>
+	"GeneralCommands.h"
+
+1588961807 c:\users\juan\desktop\utn\programacion\workspace\trabajopractico2\generalcommands.c
+	"GeneralCommands.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589497957 source:c:\users\juan\desktop\utn\programacion\workspace\trabajopractico2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployees.h"
+
+1588961798 c:\users\juan\desktop\utn\programacion\workspace\trabajopractico2\arrayemployees.c
+	"ArrayEmployees.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+	"GeneralCommands.c"
+

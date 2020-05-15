@@ -1,0 +1,91 @@
+# depslib dependency file v1.0
+1589229206 source:c:\users\nahuel\desktop\modelo_parcial_mascotas-dueños\gets.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Gets.h"
+	"Validate.h"
+
+1589229107 c:\users\nahuel\desktop\modelo_parcial_mascotas-dueños\gets.h
+
+1588816230 c:\users\nahuel\desktop\modelo_parcial_mascotas-dueños\validate.h
+
+1589229206 source:c:\users\nahuel\desktop\modelo_parcial_mascotas-dueños\validate.c
+	"Validate.h"
+
+1589324202 source:c:\users\nahuel\desktop\modelo_parcial_mascotas-dueños\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1589325723 source:c:\users\nahuel\desktop\modelo_parcial_mascotas-dueños\clientes.c
+	"Clientes.h"
+
+1589325710 c:\users\nahuel\desktop\modelo_parcial_mascotas-dueños\clientes.h
+	<string.h>
+
+1589325931 source:c:\users\nahuel\desktop\modelo_parcial_mascotas-dueños\mascotas.c
+	"Mascotas.h"
+
+1589325881 c:\users\nahuel\desktop\modelo_parcial_mascotas-dueños\mascotas.h
+	"string.h"
+
+1589243065 source:c:\users\maxi\desktop\parcial\clientes.c
+	"Clientes.h"
+
+1589242662 c:\users\maxi\desktop\parcial\clientes.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1589243129 source:c:\users\maxi\desktop\parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Mascotas_Clientes.h"
+
+1589242985 c:\users\maxi\desktop\parcial\mascotas_clientes.h
+	"Clientes.h"
+	"Mascotas.h"
+	<stdio.h>
+	<stdlib.h>
+
+1589242449 c:\users\maxi\desktop\parcial\mascotas.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1589242439 source:c:\users\maxi\desktop\parcial\mascotas.c
+	"Mascotas.h"
+
+1589243016 source:c:\users\maxi\desktop\parcial\mascotas_clientes.c
+	"Mascotas_Clientes.h"
+
+1589332744 source:c:\users\nahuel\downloads\parcial\clientes.c
+	"Clientes.h"
+
+1589333661 c:\users\nahuel\downloads\parcial\clientes.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1589334159 source:c:\users\nahuel\downloads\parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Mascotas_Clientes.h"
+
+1589334183 c:\users\nahuel\downloads\parcial\mascotas_clientes.h
+	<stdio.h>
+	<stdlib.h>
+	"Clientes.h"
+	"Mascotas.h"
+
+1589242450 c:\users\nahuel\downloads\parcial\mascotas.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1589332580 source:c:\users\nahuel\downloads\parcial\mascotas.c
+	"Mascotas.h"
+
+1589334222 source:c:\users\nahuel\downloads\parcial\mascotas_clientes.c
+	"Mascotas_Clientes.h"
+

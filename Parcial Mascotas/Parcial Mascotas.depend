@@ -1,0 +1,64 @@
+# depslib dependency file v1.0
+1589294420 source:c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\clientes.c
+	"clientes.h"
+
+1589294337 c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\clientes.h
+	"GeneralCommands.h"
+
+1589292362 c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\generalcommands.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589250491 source:c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\generalcommands.c
+	"GeneralCommands.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589284595 source:c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+	"MenuABM.h"
+
+1589286027 c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\menuabm.h
+	"GeneralCommands.h"
+	"Clientes.h"
+	"Mascotas.h"
+
+1589293277 c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\mascotas.h
+	"GeneralCommands.h"
+
+1589297048 source:c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\mascotas.c
+	"mascotas.h"
+
+1589294089 source:c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\menuabm.c
+	"MenuABM.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589293896 c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\relacionclientemascota.h
+	"clientes.h"
+	"mascotas.h"
+
+1589294167 source:c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\relacionclientemascota.c
+	"relacionClienteMascota.h"
+

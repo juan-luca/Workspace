@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1588690852 source:c:\users\juan\desktop\utn\programacion\workspace\class 12 lab rb\productos.c
+	"productos.h"
+
+1588689445 c:\users\juan\desktop\utn\programacion\workspace\class 12 lab rb\productos.h
+	<stdio.h>
+
+1588693204 source:c:\users\juan\desktop\utn\programacion\workspace\class 12 lab rb\proveedores.c
+	"proveedores.h"
+
+1588693234 c:\users\juan\desktop\utn\programacion\workspace\class 12 lab rb\proveedores.h
+	<stdio.h>
+	"productos.h"
+
+1588692866 source:c:\users\juan\desktop\utn\programacion\workspace\class 12 lab rb\main.c
+	<stdio.h>
+	<stdlib.h>
+	"proveedores.h"
+

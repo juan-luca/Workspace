@@ -1,0 +1,110 @@
+# depslib dependency file v1.0
+1589242035 source:c:\users\juan\desktop\utn\programacion\workspace\parcial orquesta\generalcommands.c
+	"GeneralCommands.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589242813 c:\users\juan\desktop\utn\programacion\workspace\parcial orquesta\generalcommands.h
+
+1589240336 source:c:\users\juan\desktop\utn\programacion\workspace\parcial orquesta\instrumento.c
+	"Instrumento.h"
+	"GeneralCommands.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589240336 c:\users\juan\desktop\utn\programacion\workspace\parcial orquesta\instrumento.h
+
+1589238779 source:c:\users\juan\desktop\utn\programacion\workspace\parcial orquesta\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+	"MenuABM.h"
+
+1589242703 c:\users\juan\desktop\utn\programacion\workspace\parcial orquesta\menuabm.h
+	"GeneralCommands.h"
+	"Musico.h"
+	"Orquesta.h"
+	"Instrumento.h"
+
+1589241143 c:\users\juan\desktop\utn\programacion\workspace\parcial orquesta\musico.h
+	"GeneralCommands.h"
+
+1589240816 c:\users\juan\desktop\utn\programacion\workspace\parcial orquesta\orquesta.h
+	"GeneralCommands.h"
+
+1589244897 source:c:\users\juan\desktop\utn\programacion\workspace\parcial orquesta\menuabm.c
+	"MenuABM.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589240621 source:c:\users\juan\desktop\utn\programacion\workspace\parcial orquesta\musico.c
+	"Musico.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589244037 source:c:\users\juan\desktop\utn\programacion\workspace\parcial orquesta\orquesta.c
+	"Orquesta.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589236453 source:c:\users\juan\desktop\utn\programacion\workspace\parcial orquesta\tiposorquesta.c
+	"TiposOrquesta.h"
+	"GeneralCommands.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589138690 c:\users\juan\desktop\utn\programacion\workspace\parcial orquesta\tiposorquesta.h
+
+1589240290 c:\users\juan\desktop\utn\programacion\workspace\parcial orquesta\orquesta.c
+	"Orquesta.h"
+	"GeneralCommands.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589243792 source:c:\users\juan\desktop\utn\programacion\workspace\parcial orquesta\informes.c
+	"Informes.h"
+
+1589241861 c:\users\juan\desktop\utn\programacion\workspace\parcial orquesta\informes.h
+	"Orquesta.h"
+	"Musico.h"
+	"Instrumento.h"
+

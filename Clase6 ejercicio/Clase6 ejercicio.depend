@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1586886304 source:c:\users\juan\desktop\utn\programacion\workspace\clase6 ejercicio\main.c
+1586888029 source:c:\users\juan\desktop\utn\programacion\workspace\clase6 ejercicio\main.c
 	<stdio.h>
 	<string.h>
 	<ctype.h>
+	<windows.h>
 
