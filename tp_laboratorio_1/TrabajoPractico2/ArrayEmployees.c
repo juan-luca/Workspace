@@ -218,7 +218,7 @@ int index=findEmployeeById(listaEmployee,tam,id);
                              printf("Salario ORIGINAL ----> ");
                             printf(" %f ",listaEmployee[index].salary);
                             printf("\n");
-                            printf("Salario NUEVO    ----> ",0);
+                            printf("Salario NUEVO    ----> ");
                             printf(" %f ",salary);
                             printf("\n");
                             linea();
