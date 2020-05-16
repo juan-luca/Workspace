@@ -41,3 +41,8 @@ void getString(char [], char []);
 *-Float - el rango maximo a validar
 *-Return - devuelve el valor validado
 */
+
+void linea();
+/**
+*-draw a 110 space line color 238
+*/

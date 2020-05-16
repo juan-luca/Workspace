@@ -75,9 +75,22 @@ int getInt(char mensaje[], int min, int max)
 
     return ValorEntero;
 }
+void linea()
+{
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, 238);
+                for(int k = 1; k < 110; k++)
+                  {
 
+                    printf(" ");
+                  }
+                  SetConsoleTextAttribute(hConsole, 7);
+
+}
 void setError(char mensaje[], int clean)
 {
+
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
 /*
   for(int k = 1; k < 255; k++)
@@ -87,7 +100,6 @@ void setError(char mensaje[], int clean)
   }
   system("pause");*/
 
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, 79);// 7 es el color normal de la consola, 79 rojo y blanco
     printf("Error, %s \n",mensaje);
     SetConsoleTextAttribute(hConsole, 7);
@@ -103,8 +115,10 @@ void setSucces(char mensaje[],int clean)
 {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, 175);// 7 es el color normal de la consola, 175 es verde con blanco
-    printf("\n%s \n",mensaje);
+    printf("\n%s ",mensaje);
+
     SetConsoleTextAttribute(hConsole, 7);
+    printf("\n");
 
     if(clean!=0)
     {

@@ -51,3 +51,34 @@
 	<windows.h>
 	"GeneralCommands.c"
 
+1589586663 source:c:\users\juan\desktop\utn\programacion\workspace\tp_laboratorio_1\trabajopractico2\generalcommands.c
+	"GeneralCommands.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1589590112 c:\users\juan\desktop\utn\programacion\workspace\tp_laboratorio_1\trabajopractico2\generalcommands.h
+
+1589497957 source:c:\users\juan\desktop\utn\programacion\workspace\tp_laboratorio_1\trabajopractico2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployees.h"
+
+1589505450 c:\users\juan\desktop\utn\programacion\workspace\tp_laboratorio_1\trabajopractico2\arrayemployees.h
+	<stdio.h>
+	"GeneralCommands.h"
+
+1589587319 source:c:\users\juan\desktop\utn\programacion\workspace\tp_laboratorio_1\trabajopractico2\arrayemployees.c
+	"ArrayEmployees.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+

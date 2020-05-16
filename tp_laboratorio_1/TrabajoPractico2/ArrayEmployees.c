@@ -89,11 +89,10 @@ int addEmployee(eEmployee listaEmployee[], int tam, int id, char name[],char las
     int i, ret=-1;
     for(i=0;i<tam;i++)
     {
-        //printf("I VALE %d\n",i);
+
         if(listaEmployee[i].isEmpty==LIBRE)
         {
-           // printf("I VALE %d\n",i);
-            printf("%d\t%s\t%s\t%f\t%d\nI VALE = %d\n",id,name,lastName,salary,sector,i);
+
             listaEmployee[i].id=id;
 
             strcpy(listaEmployee[i].name,name);
@@ -102,7 +101,6 @@ int addEmployee(eEmployee listaEmployee[], int tam, int id, char name[],char las
             listaEmployee[i].sector=sector;
             listaEmployee[i].isEmpty=OCUPADO;
 
-            printOneEmployee(listaEmployee, tam, id);
             ret=0;
             break;
         }
@@ -165,7 +163,7 @@ int index=findEmployeeById(listaEmployee,tam,id);
               modificado[1]=1;
                 break;
             case 3:
-                salary=getInt("Escriba el salario nuevo:",0,0);
+                salary=getFloat("Escriba el salario nuevo:",0,0);
                 modificado[2]=1;
                 break;
             case 4:
@@ -188,28 +186,56 @@ int index=findEmployeeById(listaEmployee,tam,id);
                         switch(i)
                         {
                         case 0:
-                            setSucces("Nombre ORIGINAL",0);
+                            printf("\n");
+                            linea();
+                            printf("\n");
+                            printf("Nombre ORIGINAL ----> ");
                             printf(" %s ",listaEmployee[index].name);
-                            setSucces("Nombre NUEVO",0);
+                            printf("\n");
+                            printf("Nombre NUEVO    ----> ");
                             printf(" %s ",nombre);
+                            printf("\n");
+                            linea();
+                            printf("\n");
                             break;
                         case 1:
-                             setSucces("Apellido ORIGINAL",0);
+                            printf("\n");
+                            linea();
+                            printf("\n");
+                             printf("Apellido ORIGINAL ----> ");
                             printf(" %s ",listaEmployee[index].lastName);
-                            setSucces("Apellido NUEVO",0);
+                           printf("\n");
+                            printf("Apellido NUEVO    ----> ");
                             printf(" %s ",apellido);
+                            printf("\n");
+                            linea();
+                            printf("\n");
                             break;
                         case 2:
-                             setSucces("Salario ORIGINAL",0);
+                            printf("\n");
+                            linea();
+                            printf("\n");
+                             printf("Salario ORIGINAL ----> ");
                             printf(" %f ",listaEmployee[index].salary);
-                            setSucces("Salario NUEVO",0);
+                            printf("\n");
+                            printf("Salario NUEVO    ----> ",0);
                             printf(" %f ",salary);
+                            printf("\n");
+                            linea();
+                            printf("\n");
                             break;
                         case 3:
-                             setSucces("Sector ORIGINAL",0);
+                            printf("\n");
+                            linea();
+                            printf("\n");
+                             printf("Sector ORIGINAL ----> ");
                             printf(" %d ",listaEmployee[index].sector);
-                            setSucces("Sector NUEVO",0);
+                           printf("\n");
+                            printf("Sector NUEVO    ----> ");
                             printf(" %d ",sector);
+                            printf("\n");
+                            linea();
+                            printf("\n");
                             break;
 
                         }
@@ -263,29 +289,59 @@ int index=findEmployeeById(listaEmployee,tam,id);
 int printOneEmployee(eEmployee listaEmployee[], int tam, int id)
 {
     int index=findEmployeeById(listaEmployee,tam, id);
-
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
             if(index>=0)
             {
-                    printf("%4d %15s %15s %12.2f %4d\n",listaEmployee[index].id,listaEmployee[index].name,listaEmployee[index].lastName, listaEmployee[index].salary,listaEmployee[index].sector);
+
+
+                  SetConsoleTextAttribute(hConsole, 238);
+                    printf("\n   ");
+                    SetConsoleTextAttribute(hConsole, 7);
+                    printf("       ");
+                    printf("%6d %30s %30s %12.2f   %6d",listaEmployee[index].id,listaEmployee[index].name,listaEmployee[index].lastName, listaEmployee[index].salary,listaEmployee[index].sector);
+                    printf("      ");
+                    SetConsoleTextAttribute(hConsole, 238);
+                    printf("   ");
+                    SetConsoleTextAttribute(hConsole, 7);
+                   // printf("\n");
+
+
             }
+
 
 
 
 
     return index;
 }
+
 int printEmployees(eEmployee listaEmployee[], int tam)
 {
     int i, ret=-1,printRet=-1;
-    printf("ID         Nombre         Apellido      Salario  Sector\n");
+HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+                linea();
+                printf("\n");
+                SetConsoleTextAttribute(hConsole, 238);
+                  printf("   ");
+
+                SetConsoleTextAttribute(hConsole, 7);
+    printf("          ID                         Nombre                       Apellido      Salario    Sector      ");
+    SetConsoleTextAttribute(hConsole, 238);
+    printf("   ");
+    SetConsoleTextAttribute(hConsole, 7);
+    printf("\n");
+    linea();
    for(i=0; i<tam; i++)
    {
 
        if(listaEmployee[i].isEmpty==OCUPADO)
        {
 
+            SetConsoleTextAttribute(hConsole, 7);
             printRet = printOneEmployee(listaEmployee, tam, listaEmployee[i].id);
+
+              SetConsoleTextAttribute(hConsole, 7);
           if(printRet==-1)
           {
               setError("Registro no encontrado",0);
@@ -296,6 +352,20 @@ int printEmployees(eEmployee listaEmployee[], int tam)
           }
        }
    }
+   printf("\n");
+    linea();
+    printf("\n");
+
+
+
+
+
+
+
+
+
+
+
     return ret;
 }
 
@@ -304,6 +374,7 @@ void MenuABM(eEmployee listaEmployee[], int tam)
 {
     int opc, id,sector, succesAdd=1, lastId=500,order;
     float salary;
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     char name[51],lastName[51];
 
         if(initEmployees(listaEmployee,tam)==0)
@@ -315,7 +386,8 @@ void MenuABM(eEmployee listaEmployee[], int tam)
             setError("ERROR EN LA INICIALIZACION",0);
         }
 
-
+   // printEmployees(listaEmployee,tam);
+    //system("pause");
     do
     {
       printf("1)ALTAS\n");
@@ -325,11 +397,15 @@ void MenuABM(eEmployee listaEmployee[], int tam)
 
       printf("0)Salir\n");
       opc=getInt("Seleccione una opcion:",0,7);
+      printf("\n");
+      linea();
+      printf("\n");
 
       switch(opc)
       {
             case 1://HACER CARGA DE A 1 REGISTRO
-                    // Preguntar cuantos empleados
+                    //
+
                     id=generateIdEmployee(listaEmployee,tam,lastId);
                     lastId=id;
                     if(id!=-1)//Solo entra si hay lugar
@@ -341,15 +417,17 @@ void MenuABM(eEmployee listaEmployee[], int tam)
                         if(addEmployee(listaEmployee,tam, id,name,lastName,salary,sector)==0)
                         {
                             succesAdd=1;
+                              SetConsoleTextAttribute(hConsole, 7);
                             printEmployees(listaEmployee,tam);
+                              SetConsoleTextAttribute(hConsole, 7);
                             setSucces("Se cargo el empleado con exito",1);
                         }else
                         {
-                            setError("ERROR EN LA CARGA.",0);
+                            setError(" EN LA CARGA.",0);
                         }
                     }else
                         {
-                            setError("ERROR, No se encontro lugar disponible.",0);
+                            setError(" No se encontro lugar disponible.",0);
                         }
 
 
@@ -360,14 +438,26 @@ void MenuABM(eEmployee listaEmployee[], int tam)
 
                 if(succesAdd==1)
                 {
-                        id=getInt("Ingrese el ID a eliminar.",100,100000);
-                        if(modifyEmployee(listaEmployee,tam, id)==0)
+                        id=getInt("Ingrese el ID a modificar.",0,0);
+                        if(findEmployeeById(listaEmployee,tam,id)>=0)
                         {
 
-                            setSucces("El empleado se modifico con exito",1);
+
+                                if(modifyEmployee(listaEmployee,tam, id)==0)
+                                {
+
+                                    setSucces("El empleado se modifico con exito",1);
+                                }else
+                                {
+                                    SetConsoleTextAttribute(hConsole, 79);// 7 es el color normal de la consola, 79 rojo y blanco
+                                    printf("No se produjo ningun cambio.");
+                                    SetConsoleTextAttribute(hConsole, 7);
+                                    printf("\n");
+
+                                }
                         }else
                         {
-                            setError("No se produjo ningun cambio.",0);
+                            setError("No se encontro el ID seleccionado.",0);
                         }
                 }else
                 {
@@ -417,7 +507,7 @@ void MenuABM(eEmployee listaEmployee[], int tam)
                              printEmployees(listaEmployee,tam);
                          }else
                          {
-                             //printf("sort== %d",sort);
+
                              setError("No se pudo ordenar el listado completo",0);
                          }
 
