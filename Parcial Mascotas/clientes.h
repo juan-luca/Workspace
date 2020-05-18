@@ -18,9 +18,10 @@ int initCliente(Cliente [], int);
 int generateIdCliente(Cliente [], int , int );
 int findClienteById(Cliente [], int , int );
 
-int addCliente(Cliente [], int , int id, char [],char [],char [],int ,int ,int );
+int addCliente(Cliente [], int , int , char [],char [],char [],int ,int ,char );
 
-//int modifyCliente(Cliente [],int ,int );
+int modifyCliente(Cliente [],int ,int );
 
 int printOneCliente(Cliente [], int , int );
 int printClientes(Cliente [], int );
+void membreteClientes();

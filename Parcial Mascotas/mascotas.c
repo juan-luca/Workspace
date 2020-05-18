@@ -1,14 +1,26 @@
 
 #include "mascotas.h"
 
+void CargarTipoMascotas(TipoMascota TipoMascota[],int tam)
+{
+    int i;
+    int id[3]={1,2,3};
+    char tipo[3][51]={{"Gato"},{"Perro"},{"Raro"}};
 
-void hardCodearMascotas(Mascota mascota[],int tam)
+    for(i=0;i<tam;i++)
+    {
+        TipoMascota[i].id=id[i];
+        strcpy(TipoMascota[i].tipo,tipo[i]);
+    }
+
+}
+void hardCodearMascotas(Mascota mascota[], int tam )
 {
     int i;
    int id[11]={100,101,102,103,104,105,106,107,108,109,110};
     int idCliente[11]={1,3,1,2,3,3,4,2,5,5,5};
     char nombre[11][51]={{"Mia"},{"Manuela"},{"Dero"},{"nuni"},{"jart"},{"carlin"},{"cucu"},{"clanca"},{"rey"},{"mini"},{"donald"}};
-    char tipo[11][51]={{"Gato"},{"Perro"},{"Gato"},{"Perro"},{"Gato"},{"Perro"},{"Perro"},{"Raro"},{"Gato"},{"Gato"},{"Perro"}};
+    int idTipo[11]={1,2,1,2,1,2,1,3,1,1,2};
     char raza[11][51]={{"Siames"},{"Mestizo"},{"Siames"},{"Pitbull"},{"Mestizo"},{"Mestizo"},{"Labrador"},{"Iguana"},{"Persa"},{"Siames"},{"Bulldog"}};
     int edad[11]={10,11,5,3,5,2,7,1,9,6,4};
     float peso[11]={5.6,7.28,5.21,21.5,35.69,78.2,15.2,25.2,23.6,7.21,2.9};
@@ -20,7 +32,7 @@ void hardCodearMascotas(Mascota mascota[],int tam)
         mascota[i].id=id[i];
         mascota[i].idCliente=idCliente[i];
         strcpy(mascota[i].nombre,nombre[i]);
-        strcpy(mascota[i].tipo,tipo[i]);
+        mascota[i].idTipo=idTipo[i];
         strcpy(mascota[i].raza,raza[i]);
         mascota[i].edad=edad[i];
         mascota[i].peso=peso[i];
@@ -70,7 +82,7 @@ int findMascotaById(Mascota listaMascota[], int tam, int id)
 {
     int index=-1;
     int i;
-    for(i=0;i<tam;i++)
+    for(i=0;i<M;i++)
     {
 
         if(id==listaMascota[i].id && listaMascota[i].isEmpty==OCUPADO )
@@ -82,6 +94,7 @@ int findMascotaById(Mascota listaMascota[], int tam, int id)
     }
     return index;
 }
+
 
 int findMascotaByClienteId(Mascota listaMascota[], int tam, int idCliente)
 {
@@ -100,9 +113,26 @@ int findMascotaByClienteId(Mascota listaMascota[], int tam, int idCliente)
     return index;
 }
 
+int printTiposMascota(TipoMascota TipoMascota[], int tam)
+{
+    int ret=-1,i;
+    for(i=0;i<tam;i++)
+    {
+        linea(15);
+        printf("\n");
+        columna();
+        printf(" %2d) %6s ",TipoMascota[i].id,TipoMascota[i].tipo);
+        columna();
+        printf("\n");
 
+        ret=0;
+    }
+    linea(15);
+    printf("\n");
+    return ret;
+}
 
-int addMascota(Mascota listaMascota[], int tam, int id, char nombre[],char tipo[],char raza[],int edad,int peso,char sexo,int idCliente)
+int addMascota(Mascota listaMascota[], int tam, int id, char nombre[],int idTipo,char raza[],int edad,float peso,char sexo,int idCliente)
 {
     int i, ret=-1;//generic var
 
@@ -112,9 +142,10 @@ int addMascota(Mascota listaMascota[], int tam, int id, char nombre[],char tipo[
         {
 
               listaMascota[i].id=id;
-
+            nombre[0]=toupper(nombre[0]);
             strcpy(listaMascota[i].nombre,nombre);
-            strcpy(listaMascota[i].tipo,tipo);
+            listaMascota[i].idTipo=idTipo;
+            raza[0]=toupper(raza[0]);
             strcpy(listaMascota[i].raza,raza);
             listaMascota[i].edad=edad;
             listaMascota[i].peso=peso;
@@ -165,16 +196,34 @@ int removeMascotaByCliente(Mascota listaMascota[], int tam, int idCliente)
    }
     return ret;
 }
+int getTipoMascota(TipoMascota TipoMascota[],int idTipo,char tipoMascota[])
+{
+    int ret=-1,i;
+
+    for(i=0;i<TM;i++)
+    {
+        if(TipoMascota[i].id==idTipo)
+        {
+            strcpy(tipoMascota,TipoMascota[i].tipo);
+            ret=0;
+            break;
+        }
+    }
+
+
+
+    return ret;
+}
 
 
 
 
-int modifyMascota(Mascota listaMascota[],int tam,int id)
+int modifyMascota(Mascota listaMascota[],int tam,int id,TipoMascota TipoMascota[])
 {
     int i,opc, columnaModificar, ret=-1;//AGREGAR SELECCION DE COLUMNA A MODIFICAR
     int index=findMascotaById(listaMascota,tam,id);
-    int idMascota, edadMascota, sexoMascota;
-     char nombreMascota[51], tipoMascota[51], razaMascota[51];
+    int  edadMascota, sexoMascota, idTipo;
+     char nombreMascota[51], razaMascota[51], tipoMascota[51];
      float pesoMascota;
      int modificado[6]={0,0,0,0,0,0};//
     if(index!=-1)
@@ -185,28 +234,33 @@ int modifyMascota(Mascota listaMascota[],int tam,int id)
     {
 
                     system("cls");
-
+lineaRGB(179,51);
+        printf("\n");
 
             printf("1)Nombre\n2)Tipo\n3)Raza\n4)edad\n5)Peso\n6)sexo\n");
             columnaModificar=getInt("Escriba el campo que desea modificar: \n Presiones 0 para salir...",0,6);
+        lineaRGB(179,51);
+        printf("\n");
             switch(columnaModificar)
             {
             case 1:
                 getString("Ingrese el nombre nuevo: ",nombreMascota);
-
+                nombreMascota[0]=toupper(nombreMascota[0]);
                 modificado[0]=1;
 
 
                 break;
 
             case 2:
-                getString("Ingrese el tipo nuevo: ",tipoMascota);
+                printTiposMascota(TipoMascota,TM);
+                idTipo=getInt("Ingrese el tipo nuevo: ",1,3);
                 //printOnMascota(listaMascota,tam, id);
                  modificado[1]=1;
 
                 break;
             case 3:
                 getString("Ingrese la raza nuevo: ",razaMascota);
+                razaMascota[0]=toupper(razaMascota[0]);
                // printOnMascota(listaMascota,tam, id);
                 modificado[2]=1;
 
@@ -223,10 +277,8 @@ int modifyMascota(Mascota listaMascota[],int tam,int id)
 
                 break;
                 case 6:
-                printf("Ingrese el sexo de la MASCOTA (F o M)\n");
-                    fflush(stdin);
-                    scanf("%c",&sexoMascota);
-                    sexoMascota=toupper(sexoMascota);
+                sexoMascota=getGender("Ingrese el sexo de la MASCOTA (F o M)");
+
                       modificado[5]=1;
 
                 break;
@@ -245,40 +297,66 @@ int modifyMascota(Mascota listaMascota[],int tam,int id)
                         switch(i)
                         {
                         case 0:
-                            setSucces("Nombre ORIGINAL",0);
-                            printf(" %s ",listaMascota[index].nombre);
-                            setSucces("Nombre NUEVO",0);
-                            printf(" %s ",nombreMascota);
+                            printf("\n");
+                            linea(60);
+                            printf("\nNombre ORIGINAL [ %s ]  ----> ",listaMascota[index].nombre);
+
+                            printf("Nombre NUEVO [ %s ]\n",nombreMascota);
+                            linea(60);
+                            printf("\n");
+
                             break;
                         case 1:
-                             setSucces("Tipo ORIGINAL",0);
-                            printf(" %s ",listaMascota[index].tipo);
-                            setSucces("Tipo NUEVO",0);
-                            printf(" %s ",tipoMascota);
+                            printf("\n");
+                            linea(60);
+                            printf("\n");
+                            getTipoMascota(TipoMascota,listaMascota[index].idTipo,tipoMascota);
+                             printf("Tipo ORIGINAL [ %s ] ----> ",tipoMascota);
+                            getTipoMascota(TipoMascota,idTipo,tipoMascota);
+                            printf("Tipo NUEVO [ %s ]",tipoMascota);
+                            printf("\n");
+                            linea(60);
+                            printf("\n");
                             break;
                         case 2:
-                             setSucces("Raza ORIGINAL",0);
-                            printf(" %s ",listaMascota[index].raza);
-                            setSucces("Raza NUEVO",0);
-                            printf(" %s ",razaMascota);
+                             printf("\n");
+                            linea(60);
+                            printf("\n");
+                            printf("Raza ORIGINAL [ %s ] ----> ",listaMascota[index].raza);
+                            printf("Raza NUEVO [ %s ]",razaMascota);
+                            printf("\n");
+                            linea(60);
+                            printf("\n");
                             break;
                         case 3:
-                             setSucces("Edad ORIGINAL",0);
-                            printf(" %d ",listaMascota[index].edad);
-                            setSucces("Edad NUEVO",0);
-                            printf(" %d ",edadMascota);
+                            printf("\n");
+                            linea(60);
+                            printf("\n");
+                             printf("Edad ORIGINAL [ %d ] ----> ",listaMascota[index].edad);
+                            printf("Edad NUEVO [ %d ]",edadMascota);
+                            printf("\n");
+                            linea(60);
+                            printf("\n");
                             break;
                         case 4:
-                             setSucces("Peso ORIGINAL",0);
-                            printf(" %f ",listaMascota[index].peso);
-                            setSucces("Peso NUEVO",0);
-                            printf(" %f ",pesoMascota);
+                             printf("\n");
+                            linea(60);
+                            printf("\n");
+                             printf("Peso ORIGINAL [ %6.2f ] ----> ",listaMascota[index].peso);
+                            printf("Peso NUEVO [ %6.2f ]",pesoMascota);
+                            printf("\n");
+                            linea(60);
+                            printf("\n");
                             break;
                         case 5:
-                             setSucces("Sexo ORIGINAL",0);
-                            printf(" %c ",listaMascota[index].sexo);
-                            setSucces("Sexo NUEVO",0);
-                            printf(" %c ",sexoMascota);
+                             printf("\n");
+                            linea(60);
+                            printf("\n");
+                             printf("Sexo ORIGINAL [ %c ] ----> ",listaMascota[index].sexo);
+                            printf("Sexo NUEVO [ %c ]",sexoMascota);
+                            printf("\n");
+                            linea(60);
+                            printf("\n");
                             break;
                         }
                         }
@@ -301,7 +379,7 @@ int modifyMascota(Mascota listaMascota[],int tam,int id)
 
                             break;
                         case 1:
-                            strcpy(listaMascota[index].tipo,tipoMascota);
+                            listaMascota[index].idTipo=idTipo;
 
 
                             break;

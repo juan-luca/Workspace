@@ -8,10 +8,6 @@
 #include <windows.h>
 
 
-
-
-
-
 float getFloat(char mensaje[], float min, float max)
 {
     float numero;
@@ -79,9 +75,42 @@ int getInt(char mensaje[], int min, int max)
 
     return ValorEntero;
 }
+void linea(int len)
+{
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, 238);
+                for(int k = 1; k < len; k++)
+                  {
 
+                    printf(" ");
+                  }
+                  SetConsoleTextAttribute(hConsole, 7);
+
+}
+void lineaRGB(int len, int color)
+{
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, color);
+                for(int k = 1; k < len; k++)
+                  {
+
+                    printf(" ");
+                  }
+                  SetConsoleTextAttribute(hConsole, 7);
+
+}
+void columna()
+{
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, 238);
+    printf(" ");
+    SetConsoleTextAttribute(hConsole, 7);
+
+}
 void setError(char mensaje[], int clean)
 {
+
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
 /*
   for(int k = 1; k < 255; k++)
@@ -91,45 +120,15 @@ void setError(char mensaje[], int clean)
   }
   system("pause");*/
 
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, 79);// 7 es el color normal de la consola, 79 rojo y blanco
-    printf("Error, %s \n",mensaje);
+    printf("\nError, %s",mensaje);
     SetConsoleTextAttribute(hConsole, 7);
+    printf("\n");
 
     if(clean!=0)
     {
         system("pause");
        system("cls");
-    }
-}
-
-void getStringUpper(char dato[], char mensaje[])
-{
-    int len, i;
-     printf("%s", mensaje);
-        fflush(stdin);
-
-     fgets(dato, 30, stdin);
-
-     len = strlen(dato);
-
-     dato[len-1] = '\0';
-
-    dato[0]= toupper(dato[0]);
-    while(dato[len]!='\0')
-    {
-
-       len++;
-    }
-
-    for(i=0;i<len;i++)
-    {
-
-        if(dato[i]==' ')
-        {
-           dato[i+1]= toupper(dato[i+1]);
-
-        }
     }
 }
 
@@ -137,8 +136,10 @@ void setSucces(char mensaje[],int clean)
 {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, 175);// 7 es el color normal de la consola, 175 es verde con blanco
-    printf("\n%s \n",mensaje);
+    printf("\n%s ",mensaje);
+
     SetConsoleTextAttribute(hConsole, 7);
+    printf("\n");
 
     if(clean!=0)
     {
@@ -148,3 +149,45 @@ void setSucces(char mensaje[],int clean)
 
 }
 
+char getGender(char msg[])
+{
+
+int validate=0;
+char gender;
+
+        printf("%s\n", msg);
+        fflush(stdin);
+        scanf("%c",&gender);
+        gender=toupper(gender);
+
+        switch(gender)
+        {
+            case 'F':
+
+                validate=1;
+                break;
+            case 'M':validate=1;
+
+                break;
+        }
+
+    while(validate!=1)
+    {
+       setError(msg,0);
+
+        fflush(stdin);
+        scanf("%c",&gender);
+        gender=toupper(gender);
+        switch(gender)
+        {
+            case 'F':
+
+                validate=1;
+                break;
+            case 'M':validate=1;
+
+                break;
+        }
+    }
+return gender;
+}

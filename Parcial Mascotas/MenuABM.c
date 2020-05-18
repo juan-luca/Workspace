@@ -17,21 +17,26 @@
 
 
 
-void MenuABM(Mascota Mascota[], Cliente Cliente[])
+void MenuABM(Mascota Mascota[], Cliente Cliente[], TipoMascota TipoMascota[])
 {
 
 
  int opc;
 
- int id, telefono, edadCliente, idCliente,   lastIdCliente=5,lastIdMascota=110;
- char nombreCliente[51], Apellido[51], Localidad[51], sexo;
- int idMascota, edadMascota, sexoMascota;
- char nombreMascota[51], tipoMascota[51], razaMascota[51];
+ int  telefonoCliente, edadCliente, idCliente,   lastIdCliente=5,lastIdMascota=110;
+ char nombreCliente[51], ApellidoCliente[51], LocalidadCliente[51], sexoCliente;
+ int idMascota, edadMascota, idTipo;
+ char nombreMascota[51],  razaMascota[51], sexoMascota;
  float pesoMascota;
+/*HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+for(int k = 1; k < 255; k++)
+  {
+    SetConsoleTextAttribute(hConsole, k);
+    printf("%d COLOR\n");
+  }
+  system("pause");
 
-
-
-
+*///-----PALETA DE COLORES
 
 
 
@@ -54,15 +59,16 @@ void MenuABM(Mascota Mascota[], Cliente Cliente[])
         {
             setError("ERROR EN LA INICIALIZACION",0);
         }
-
+       CargarTipoMascotas(TipoMascota,TM);
         hardCodearMascotas(Mascota,M);
 
-
+// printClientes(Cliente,C);
+ //system("pause");
     while(opc!=0)
     {
         setSucces("MENU PRINCIPAL",0);
         printf("1)Agregar Cliente\n");
-        printf("2)Ordenar Mascotas por tipo y listarla por dueño\n");
+        printf("2)Modificar Cliente\n");
         printf("3)Eliminar Cliente\n");
         printf("4)Imprimir Clientes\n");
         printf("5)Agregar Mascota\n");
@@ -70,15 +76,73 @@ void MenuABM(Mascota Mascota[], Cliente Cliente[])
         printf("7)Eliminar Mascota\n");
         printf("8)Imprimir Mascotas\n");
         printf("9)Imprimir Clientes con mascotas\n");
-        printf("0)Salir\n");
-      opc=getInt("Seleccione una opcion:",0,15);
+        printf("10)Ordenar Mascotas por tipo y listarla por cliente\n");
+        printf("11)Listar los clientes con más de una mascota\n");
+        printf("12)Listar las mascotas de mas de tres anios, con respectivos clientes.\n");
+        printf("13)Listar las mascotas por un tipo en particular\n");
+        printf("14)Ordenar a los clientes por cantidades de mascotas y mostrarlos.\n");
+        printf("15)Ordenar a los clientes por cantidades de mascotas y por orden alfabético de los nombres y mostrarlos.\n");
+        printf("16)Promedio de edad entre las mascotas\n");
+        printf("17)Promedio de edad entre las mascotas, por tipo\n");
+        printf("18)Promedio entre varones y mujeres de mis clientes\n");
 
-      switch(opc)
+
+
+        printf("0)Salir\n");
+      opc=getInt("Seleccione una opcion:",0,18);
+
+        lineaRGB(179,51);
+        printf("\n");
+      switch(opc)//FALTA BORRAR MENU Y DEJAR ENCASILLADA SOLO LA OPCION ELEGIDA
       {
-            case 1://alta dueño
+            case 1:
+
+
+                    idCliente=generateIdCliente(Cliente,M,lastIdCliente);
+                    lastIdCliente=idCliente;
+                    getString("Ingrese el nombre del  Cliente",nombreCliente);
+                    printf("\n");
+                    linea(179);
+                    printf("\n");
+                    getString("Ingrese el apellido del Cliente",ApellidoCliente);
+                    printf("\n");
+                    linea(179);
+                    printf("\n");
+                    getString("Ingrese la localidad del  Cliente",LocalidadCliente);
+                    printf("\n");
+                    linea(179);
+                    printf("\n");
+                    telefonoCliente=getInt("Ingrese el telefono del  Cliente:",0,0);
+                    printf("\n");
+                    linea(179);
+                    printf("\n");
+                    edadCliente=getInt("Ingrese la edad del  Cliente:",0,0);
+                    printf("\n");
+                    linea(179);
+                    printf("\n");
+                    sexoCliente=getGender("Ingrese el sexo del Cliente (F o M)");
+
+                if(addCliente(Cliente,  C,  idCliente,  nombreCliente, ApellidoCliente, LocalidadCliente, telefonoCliente, edadCliente, sexoCliente)==0)
+                {
+                    setSucces("Cliente agregado exitosamente,",0);
+
+                }else
+                {
+                    setError("No se pudo agregar la Cliente",0);
+                }
+
+
                 break;
             case 2:
-                printMascotasOrderedByTipo(Mascota,Cliente);
+                printClientes(Cliente,C);
+                idCliente=getInt("Ingrese el Cliente a modificar.",0,0);
+                if(modifyCliente(Cliente,C,idCliente)==0)
+                {
+                 setSucces("Modificado correctamente",0);
+                }else
+                {
+                    setError("No se pudo modificar.",0);
+                }
                 break;
             case 3:
                 printClientes(Cliente,C);
@@ -105,17 +169,36 @@ void MenuABM(Mascota Mascota[], Cliente Cliente[])
                 idCliente=getInt("Ingrese el id de CLIENTE:",0,0);
                 if(findClienteById(Cliente,C,idCliente)!= -1)
                 {
+
                     idMascota=generateIdMascota(Mascota,M,lastIdMascota);
+                    lastIdMascota=idMascota;
                     getString("Ingrese el nombre de la MASCOTA",nombreMascota);
-                    getString("Ingrese el tipo de la MASCOTA",tipoMascota);
+                    printf("\n");
+                    linea(179);
+                    printf("\n");
+                    printTiposMascota(TipoMascota,TM);
+                    printf("\n");
+                    linea(179);
+                    printf("\n");
+                    idTipo=getInt("Ingrese el tipo de la MASCOTA",1,3);
+                    printf("\n");
+                    linea(179);
+                    printf("\n");
                     getString("Ingrese la raza de la MASCOTA",razaMascota);
+                    printf("\n");
+                    linea(179);
+                    printf("\n");
                     edadMascota=getInt("Ingrese la edad de la MASCOTA:",0,0);
+                    printf("\n");
+                    linea(179);
+                    printf("\n");
                     pesoMascota=getFloat("Ingrese el peso de la MASCOTA:",0,0);
-                    printf("Ingrese el sexo de la MASCOTA (F o M)\n");
-                    fflush(stdin);
-                    scanf("%c",&sexoMascota);
-                    sexoMascota=toupper(sexoMascota);
-                if(addMascota(Mascota,  M,  idMascota,  nombreMascota, tipoMascota, razaMascota, edadMascota, pesoMascota, sexoMascota, idCliente)==0)
+                    printf("\n");
+                    linea(179);
+                    printf("\n");
+                    sexoMascota=getGender("Ingrese el sexo de la MASCOTA (F o M)");
+
+                if(addMascota(Mascota,  M,  idMascota,  nombreMascota, idTipo, razaMascota, edadMascota, pesoMascota, sexoMascota, idCliente)==0)
                 {
                     setSucces("Mascota agregada exitosamente,",0);
 
@@ -131,18 +214,18 @@ void MenuABM(Mascota Mascota[], Cliente Cliente[])
                 break;
 
             case 6://modificar mascota
-                printMascotas(Mascota,Cliente);
+                printMascotas(Mascota,Cliente,TipoMascota);
                 idMascota=getInt("Ingrese la mascota a modificar.",0,0);
-                if(modifyMascota(Mascota,M,idMascota)==0)
+                if(modifyMascota(Mascota,M,idMascota,TipoMascota)==0)
                 {
                  setSucces("Modificada correctamente",0);
                 }else
                 {
-                    setError("No se pudo eliminar.",0);
+                    setError("No se pudo modificar.",0);
                 }
                 break;
             case 7://eliminar mascota
-                printMascotas(Mascota,Cliente);
+                printMascotas(Mascota,Cliente,TipoMascota);
                 idMascota=getInt("Ingrese la mascota a eliminar.",0,0);
                 if(removeMascota(Mascota,M,idMascota)==0)
                 {
@@ -154,10 +237,69 @@ void MenuABM(Mascota Mascota[], Cliente Cliente[])
 
                 break;
             case 8:
-                printMascotas(Mascota,Cliente);
+                printMascotas(Mascota,Cliente,TipoMascota);
                 break;
             case 9:
-                printClientesMascotas(Cliente,Mascota);
+                printClientesMascotas(Cliente,Mascota,TipoMascota);
+                break;
+                case 10:
+                if(printMascotasOrderedByTipo(Mascota,Cliente,TipoMascota)==-1)
+                {
+                    setError("No se pudo ordenar las mascotas por tipo, contactese con soporte por favor.",0);
+                }
+                break;
+                case 11:
+                if(printClientes2MascotasUp(Cliente,Mascota)==-1)
+                {
+                    setError("No se pudo resolver la consulta, contactese con soporte.",0);
+                }
+                break;
+                case 12:
+                if(printMascotas3anios(Mascota,Cliente,TipoMascota)==-1)
+                {
+                    setError("No se pudo resolver la consulta, contactese con soporte.",0);
+                }
+                break;
+                 case 13:
+                if(printMascotasByTipo(Mascota,Cliente,TipoMascota)==-1)
+                {
+                    setError("No se pudo resolver la consulta, contactese con soporte.",0);
+                }
+                break;
+                case 14:
+                if(printClientesCantMascotas(Cliente,Mascota)==-1)
+                {
+                    setError("No se pudo resolver la consulta, contactese con soporte.",0);
+                }
+
+                break;
+                case 15:
+                if(printClientesCantMascotasAlfabeticoNombre(Cliente,Mascota)==-1)
+                {
+                    setError("No se pudo resolver la consulta, contactese con soporte.",0);
+                }
+
+                break;
+                case 16:
+                 if(promedioEdadMascota(Mascota)==-1)
+                {
+                    setError("No se pudo resolver la consulta, contactese con soporte.",0);
+                }
+
+                break;
+                case 17:
+                 if(promedioEdadMascotaByTipo(Mascota, TipoMascota)==-1)
+                {
+                    setError("No se pudo resolver la consulta, contactese con soporte.",0);
+                }
+
+                break;
+                case 18:
+                 if(promedioClientesBySexo(Cliente)==-1)
+                {
+                    setError("No se pudo resolver la consulta, contactese con soporte.",0);
+                }
+
                 break;
 
 
