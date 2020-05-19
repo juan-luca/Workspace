@@ -16,8 +16,17 @@ int printClientesCantMascotasAlfabeticoNombre(Cliente [],Mascota []);
 int promedioEdadMascota(Mascota []);
 int promedioEdadMascotaByTipo(Mascota [], TipoMascota []);
 int promedioClientesBySexo( Cliente []);
+int modifyMascota(Mascota [],int ,int ,TipoMascota TipoMascota[], Raza Raza[], Cliente Cliente[]);
+int printClientesIdemSexo(Cliente Cliente[], Mascota Mascota[]);
+
+
+
+
+
 //getRazaMascota(Raza,listaMascota[z].idTipo, razaMascota);
 //diseño
+
+
 void membreteMascotas();
 void membreteMascotasCliente();
 void membreteMascotasTipo();

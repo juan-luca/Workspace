@@ -976,3 +976,294 @@ int promedioClientesBySexo(Cliente Cliente[])
 }
 
 
+int modifyMascota(Mascota listaMascota[],int tam,int id,TipoMascota TipoMascota[], Raza Raza[], Cliente Cliente[])
+{
+    int i,opc, columnaModificar, ret=-1, indexCA,indexCB;//AGREGAR SELECCION DE COLUMNA A MODIFICAR
+    int index=findMascotaById(listaMascota,tam,id);
+    int  edadMascota, sexoMascota, idTipo,  idRazaB, idCliente;
+     char nombreMascota[51], razaMascotaA[51],razaMascotaB[51], tipoMascota[51];
+     float pesoMascota;
+     int modificado[7]={0,0,0,0,0,0,0};//
+
+
+    if(index!=-1)
+    {
+
+    getRazaMascota(Raza,listaMascota[index].idRaza, razaMascotaA);
+    do
+    {
+
+                    system("cls");
+lineaRGB(179,51);
+        printf("\n");
+
+            printf("1)Nombre\n2)Tipo\n3)Raza\n4)edad\n5)Peso\n6)sexo\n7)Cliente\n");
+            columnaModificar=getInt("Escriba el campo que desea modificar: \n Presiones 0 para salir...",0,7);
+        lineaRGB(179,51);
+        printf("\n");
+            switch(columnaModificar)
+            {
+            case 1:
+                getString("Ingrese el nombre nuevo: ",nombreMascota);
+                nombreMascota[0]=toupper(nombreMascota[0]);
+                modificado[0]=1;
+
+
+                break;
+
+            case 2:
+                printTiposMascota(TipoMascota,TM);
+                idTipo=getInt("Ingrese el tipo nuevo: ",1,3);
+                //printOnMascota(listaMascota,tam, id);
+                 modificado[1]=1;
+
+                break;
+            case 3:
+                printRazaMascota(Raza);
+                idRazaB=getInt("Ingrese la raza nuevo: ",0,0);
+                getRazaMascota(Raza,idRazaB, razaMascotaB);
+               // printOnMascota(listaMascota,tam, id);
+                modificado[2]=1;
+
+                break;
+                case 4:
+                edadMascota=getInt("Escriba la edad nuevo:",0,0);
+               // printOnMascota(listaMascota,tam, id);
+                modificado[3]=1;
+
+                break;
+                case 5:
+                    pesoMascota=getFloat("Escriba la peso nuevo:",0,0);
+                     modificado[4]=1;
+
+                break;
+                case 6:
+                sexoMascota=getGender("Ingrese el sexo de la MASCOTA (F o M)");
+
+                      modificado[5]=1;
+
+                break;
+                case 7:
+                    printClientes(Cliente,C);
+                idCliente=getInt("Ingrese el id cliente de la MASCOTA ",0,0);
+
+                      modificado[6]=1;
+
+                break;
+
+            }
+    }while(columnaModificar!=0);
+
+    setSucces("Desea realizar las siguientes modificaciones? (SI=1 o NO=2)",0);
+
+                    for(i=0;i<7;i++)
+                    {
+                        if(modificado[i]==1)
+                        {
+
+
+                        switch(i)
+                        {
+                        case 0:
+                            printf("\n");
+                            linea(60);
+                            printf("\nNombre ORIGINAL [ %s ]  ----> ",listaMascota[index].nombre);
+
+                            printf("Nombre NUEVO [ %s ]\n",nombreMascota);
+                            linea(60);
+                            printf("\n");
+
+                            break;
+                        case 1:
+                            printf("\n");
+                            linea(60);
+                            printf("\n");
+                            getTipoMascota(TipoMascota,listaMascota[index].idTipo,tipoMascota);
+                             printf("Tipo ORIGINAL [ %s ] ----> ",tipoMascota);
+                            getTipoMascota(TipoMascota,idTipo,tipoMascota);
+                            printf("Tipo NUEVO [ %s ]",tipoMascota);
+                            printf("\n");
+                            linea(60);
+                            printf("\n");
+                            break;
+                        case 2:
+                             printf("\n");
+                            linea(60);
+                            printf("\n");
+                            printf("Raza ORIGINAL [ %s ] ----> ",razaMascotaA);
+                            printf("Raza NUEVO [ %s ]",razaMascotaB);
+                            printf("\n");
+                            linea(60);
+                            printf("\n");
+                            break;
+                        case 3:
+                            printf("\n");
+                            linea(60);
+                            printf("\n");
+                             printf("Edad ORIGINAL [ %d ] ----> ",listaMascota[index].edad);
+                            printf("Edad NUEVO [ %d ]",edadMascota);
+                            printf("\n");
+                            linea(60);
+                            printf("\n");
+                            break;
+                        case 4:
+                             printf("\n");
+                            linea(60);
+                            printf("\n");
+                             printf("Peso ORIGINAL [ %6.2f ] ----> ",listaMascota[index].peso);
+                            printf("Peso NUEVO [ %6.2f ]",pesoMascota);
+                            printf("\n");
+                            linea(60);
+                            printf("\n");
+                            break;
+                        case 5:
+                             printf("\n");
+                            linea(60);
+                            printf("\n");
+                             printf("Sexo ORIGINAL [ %c ] ----> ",listaMascota[index].sexo);
+                            printf("Sexo NUEVO [ %c ]",sexoMascota);
+                            printf("\n");
+                            linea(60);
+                            printf("\n");
+                            break;
+
+                        case 6:
+                            indexCA=findClienteById(Cliente,C,listaMascota[index].idCliente);
+                            indexCB=findClienteById(Cliente,C,idCliente);
+                             printf("\n");
+                            linea(60);
+                            printf("\n");
+                             printf("Cliente ORIGINAL [ %s ] ----> ",Cliente[indexCA].nombre);
+                            printf("Cliente NUEVO [ %s ]",Cliente[indexCB].nombre);
+                            printf("\n");
+                            linea(60);
+                            printf("\n");
+                            break;
+                        }
+                        }
+                    }
+
+    opc=getInt("",1,2);
+    if(opc==1)
+    {
+        ret=0;
+        for(i=0;i<6;i++)
+        {
+                if(modificado[i]==1)
+                {
+
+
+                    switch(i)
+                    {
+                        case 0:
+                            strcpy(listaMascota[index].nombre,nombreMascota);
+
+                            break;
+                        case 1:
+                            listaMascota[index].idTipo=idTipo;
+
+
+                            break;
+                        case 2:
+                            listaMascota[index].idRaza=idRazaB;
+                            break;
+                        case 3:
+
+                            listaMascota[index].edad=edadMascota;
+                            break;
+                        case 4:
+                             listaMascota[index].peso=pesoMascota;
+                            break;
+                        case 5:
+                            listaMascota[index].sexo=sexoMascota;
+                            break;
+                    }
+                }
+        }
+        ret=0;
+    }else
+    {
+        ret=-1;
+    }
+
+
+}
+    return ret;
+}
+
+
+int printClientesIdemSexo(Cliente listaCliente[], Mascota Mascota[])
+{
+    int i, ret=-1,printRet=-1, cantMascotaF[C], cantMascotaM[C];
+
+
+     for(i=0; i<C; i++)//Inicializa las cantidades de mascotas en la misma posicion del cliente
+        {
+            cantMascotaF[i]=0;
+            cantMascotaM[i]=0;
+            if(listaCliente[i].isEmpty==OCUPADO)
+            {
+
+                   for(int j=0;j<M;j++)
+                   {
+                       if(Mascota[j].idCliente==listaCliente[i].id )
+                       {
+                            switch(Mascota[j].sexo)
+                            {
+                                case 'F':cantMascotaF[i]++;
+
+
+                                    break;
+                                case 'M':cantMascotaM[i]++;
+
+                                    break;
+                            }
+
+
+
+                       }
+                   }
+           }
+
+        }
+
+
+
+
+
+    printf("\n");
+    membreteClientes();
+
+
+
+
+
+   for(i=0; i<C; i++)
+   {
+
+       if(listaCliente[i].isEmpty==OCUPADO)
+       {
+
+            //printf("\nID CLIENTE %d",listaCliente[i].id);
+            if(cantMascotaF[i]>1 || cantMascotaM[i]>1)
+            {
+
+
+            printRet = printOneCliente(listaCliente, C, listaCliente[i].id);
+            }
+          if(printRet==-1)
+          {
+              setError("Registro no encontrado",0);
+              ret=-1;
+          }else
+          {
+              ret=0;
+          }
+       }
+   }
+   linea(154);
+   printf("\n");
+    return ret;
+}
+
+

@@ -26,7 +26,7 @@ void MenuABM(Mascota Mascota[], Cliente Cliente[], TipoMascota TipoMascota[], Ra
  int  telefonoCliente, edadCliente, idCliente,   lastIdCliente=5,lastIdMascota=110;
  char nombreCliente[51], ApellidoCliente[51], LocalidadCliente[51], sexoCliente;
  int idMascota, edadMascota, idTipo, idRaza;
- char nombreMascota[51],  razaMascota[51], sexoMascota;
+ char nombreMascota[51],   sexoMascota;
  float pesoMascota;
 /*HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 for(int k = 1; k < 255; k++)
@@ -62,7 +62,7 @@ for(int k = 1; k < 255; k++)
         CargarTipoMascotas(TipoMascota,TM);
         hardCodearMascotas(Mascota,M);
         CargarRaza( Raza);
-            printRazaMascota(Raza);
+            //printRazaMascota(Raza);
 //printClientes(Cliente,C);
  //system("pause");
 
@@ -89,11 +89,12 @@ for(int k = 1; k < 255; k++)
         printf("16)Promedio de edad entre las mascotas\n");
         printf("17)Promedio de edad entre las mascotas, por tipo\n");
         printf("18)Promedio entre varones y mujeres de mis clientes\n");
+        printf("19)listar los clientes que tienen mascotas del mismo sexo.\n");
 
 
 
         printf("0)Salir\n");
-      opc=getInt("Seleccione una opcion:",0,18);
+      opc=getInt("Seleccione una opcion:",0,19);
 
         lineaRGB(179,51);
         printf("\n");
@@ -222,7 +223,7 @@ for(int k = 1; k < 255; k++)
             case 6://modificar mascota
                 printMascotas(Mascota,Cliente,TipoMascota,Raza);
                 idMascota=getInt("Ingrese la mascota a modificar.",0,0);
-                if(modifyMascota(Mascota,M,idMascota,TipoMascota,Raza)==0)
+                if(modifyMascota(Mascota,M,idMascota,TipoMascota,Raza,Cliente)==0)
                 {
                  setSucces("Modificada correctamente",0);
                 }else
@@ -302,6 +303,13 @@ for(int k = 1; k < 255; k++)
                 break;
                 case 18:
                  if(promedioClientesBySexo(Cliente)==-1)
+                {
+                    setError("No se pudo resolver la consulta, contactese con soporte.",0);
+                }
+
+                break;
+                case 19:
+                 if(printClientesIdemSexo(Cliente, Mascota)==-1)
                 {
                     setError("No se pudo resolver la consulta, contactese con soporte.",0);
                 }
