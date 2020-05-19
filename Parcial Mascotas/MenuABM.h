@@ -4,4 +4,4 @@
 #include "relacionClienteMascota.h"
 
 
-void MenuABM(Mascota Mascota[], Cliente Cliente[], TipoMascota TipoMascota[]);
+void MenuABM(Mascota Mascota[], Cliente Cliente[], TipoMascota TipoMascota[], Raza Raza[]);

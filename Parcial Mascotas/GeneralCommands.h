@@ -9,6 +9,7 @@
 #define C 10
 #define M 20
 #define TM 3
+#define R 7
 
 #define LIBRE 0
 #define OCUPADO 1

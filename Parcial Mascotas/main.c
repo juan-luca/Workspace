@@ -14,8 +14,9 @@ int main()
     Cliente Cliente[C];
     Mascota Mascota[M];
     TipoMascota TipoMascota[TM];
+    Raza Raza[R];
 
-    MenuABM(Mascota, Cliente, TipoMascota);
+    MenuABM(Mascota, Cliente, TipoMascota, Raza);
    /* Orquesta Orquesta[tOrquesta];
     TipoOrquesta TipoOrquesta[3];
     Instrumento Instrumento[tInstrumento];

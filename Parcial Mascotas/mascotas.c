@@ -7,6 +7,7 @@ void CargarTipoMascotas(TipoMascota TipoMascota[],int tam)
     int id[3]={1,2,3};
     char tipo[3][51]={{"Gato"},{"Perro"},{"Raro"}};
 
+
     for(i=0;i<tam;i++)
     {
         TipoMascota[i].id=id[i];
@@ -14,6 +15,25 @@ void CargarTipoMascotas(TipoMascota TipoMascota[],int tam)
     }
 
 }
+void CargarRaza(Raza Raza[])
+{
+    int i;
+    int id[7]={1,2,3,4,5,6,7};
+    char nombre[7][51]={{"Labrador"},{"Pitbull"},{"Bulldog"},{"Overo"},{"Persa"},{"Siames"},{"Encharquido"}};
+    char pais[7][51]={{"Hungria"},{"Ucrania"},{"Argentina"},{"Alemania"},{"Egipto"},{"Uruguay"},{"Espania"}};
+    int idTipo[7]={2,2,2,3,1,1,3};
+
+    for(i=0;i<R;i++)
+    {
+        Raza[i].id=id[i];
+        strcpy(Raza[i].nombre,nombre[i]);
+        strcpy(Raza[i].pais,pais[i]);
+        Raza[i].idTipo=idTipo;
+
+    }
+
+}
+
 void hardCodearMascotas(Mascota mascota[], int tam )
 {
     int i;
@@ -21,7 +41,7 @@ void hardCodearMascotas(Mascota mascota[], int tam )
     int idCliente[11]={1,3,1,2,3,3,4,2,5,5,5};
     char nombre[11][51]={{"Mia"},{"Manuela"},{"Dero"},{"nuni"},{"jart"},{"carlin"},{"cucu"},{"clanca"},{"rey"},{"mini"},{"donald"}};
     int idTipo[11]={1,2,1,2,1,2,1,3,1,1,2};
-    char raza[11][51]={{"Siames"},{"Mestizo"},{"Siames"},{"Pitbull"},{"Mestizo"},{"Mestizo"},{"Labrador"},{"Iguana"},{"Persa"},{"Siames"},{"Bulldog"}};
+    int idRaza[11]={1,1,1,2,1,2,2,3,1,1,2};
     int edad[11]={10,11,5,3,5,2,7,1,9,6,4};
     float peso[11]={5.6,7.28,5.21,21.5,35.69,78.2,15.2,25.2,23.6,7.21,2.9};
     char sexo[11]={'F','M','F','M','M','M','M','F','M','M','M'};
@@ -33,7 +53,7 @@ void hardCodearMascotas(Mascota mascota[], int tam )
         mascota[i].idCliente=idCliente[i];
         strcpy(mascota[i].nombre,nombre[i]);
         mascota[i].idTipo=idTipo[i];
-        strcpy(mascota[i].raza,raza[i]);
+        mascota[i].idRaza=idRaza[i];
         mascota[i].edad=edad[i];
         mascota[i].peso=peso[i];
         mascota[i].sexo=sexo[i];
@@ -132,7 +152,7 @@ int printTiposMascota(TipoMascota TipoMascota[], int tam)
     return ret;
 }
 
-int addMascota(Mascota listaMascota[], int tam, int id, char nombre[],int idTipo,char raza[],int edad,float peso,char sexo,int idCliente)
+int addMascota(Mascota listaMascota[], int tam, int id, char nombre[],int idTipo,int idRaza,int edad,float peso,char sexo,int idCliente)
 {
     int i, ret=-1;//generic var
 
@@ -145,8 +165,8 @@ int addMascota(Mascota listaMascota[], int tam, int id, char nombre[],int idTipo
             nombre[0]=toupper(nombre[0]);
             strcpy(listaMascota[i].nombre,nombre);
             listaMascota[i].idTipo=idTipo;
-            raza[0]=toupper(raza[0]);
-            strcpy(listaMascota[i].raza,raza);
+
+            listaMascota[i].idRaza=idRaza;
             listaMascota[i].edad=edad;
             listaMascota[i].peso=peso;
             listaMascota[i].sexo=sexo;
@@ -218,18 +238,20 @@ int getTipoMascota(TipoMascota TipoMascota[],int idTipo,char tipoMascota[])
 
 
 
-int modifyMascota(Mascota listaMascota[],int tam,int id,TipoMascota TipoMascota[])
+int modifyMascota(Mascota listaMascota[],int tam,int id,TipoMascota TipoMascota[], Raza Raza[])
 {
     int i,opc, columnaModificar, ret=-1;//AGREGAR SELECCION DE COLUMNA A MODIFICAR
     int index=findMascotaById(listaMascota,tam,id);
-    int  edadMascota, sexoMascota, idTipo;
-     char nombreMascota[51], razaMascota[51], tipoMascota[51];
+    int  edadMascota, sexoMascota, idTipo,  idRazaB;
+     char nombreMascota[51], razaMascotaA[51],razaMascotaB[51], tipoMascota[51];
      float pesoMascota;
      int modificado[6]={0,0,0,0,0,0};//
+
+
     if(index!=-1)
     {
 
-
+    getRazaMascota(Raza,listaMascota[index].idRaza, razaMascotaA);
     do
     {
 
@@ -259,8 +281,9 @@ lineaRGB(179,51);
 
                 break;
             case 3:
-                getString("Ingrese la raza nuevo: ",razaMascota);
-                razaMascota[0]=toupper(razaMascota[0]);
+                printRazaMascota(Raza);
+                idRazaB=getInt("Ingrese la raza nuevo: ",0,0);
+                getRazaMascota(Raza,idRazaB, razaMascotaB);
                // printOnMascota(listaMascota,tam, id);
                 modificado[2]=1;
 
@@ -322,8 +345,8 @@ lineaRGB(179,51);
                              printf("\n");
                             linea(60);
                             printf("\n");
-                            printf("Raza ORIGINAL [ %s ] ----> ",listaMascota[index].raza);
-                            printf("Raza NUEVO [ %s ]",razaMascota);
+                            printf("Raza ORIGINAL [ %s ] ----> ",razaMascotaA);
+                            printf("Raza NUEVO [ %s ]",razaMascotaB);
                             printf("\n");
                             linea(60);
                             printf("\n");
@@ -384,7 +407,7 @@ lineaRGB(179,51);
 
                             break;
                         case 2:
-                            strcpy(listaMascota[index].raza,razaMascota);
+                            listaMascota[index].idRaza=idRazaB;
                             break;
                         case 3:
 
@@ -411,6 +434,47 @@ lineaRGB(179,51);
 }
 
 
+int getRazaMascota(Raza Raza[],int idRaza,char cadena[])
+{
+    int ret=-1,i;
+
+    for(i=0;i<R;i++)
+    {
+        if(Raza[i].id==idRaza)
+        {
+            strcpy(cadena,Raza[i].nombre);
+            ret=0;
+            break;
+        }
+    }
 
 
+
+    return ret;
+
+}
+
+
+
+
+int printRazaMascota(Raza Raza[])
+{
+    int ret=-1,i;
+    for(i=0;i<R;i++)
+    {
+        linea(54);
+        printf("\n");
+        columna();
+        printf(" %2d) %15s   ",Raza[i].id,Raza[i].nombre);
+        columna();
+        printf("   %20s    ",Raza[i].pais);
+        columna();
+        printf("\n");
+
+        ret=0;
+    }
+    linea(54);
+    printf("\n");
+    return ret;
+}
 

@@ -17,7 +17,7 @@
 
 
 
-void MenuABM(Mascota Mascota[], Cliente Cliente[], TipoMascota TipoMascota[])
+void MenuABM(Mascota Mascota[], Cliente Cliente[], TipoMascota TipoMascota[], Raza Raza[])
 {
 
 
@@ -25,7 +25,7 @@ void MenuABM(Mascota Mascota[], Cliente Cliente[], TipoMascota TipoMascota[])
 
  int  telefonoCliente, edadCliente, idCliente,   lastIdCliente=5,lastIdMascota=110;
  char nombreCliente[51], ApellidoCliente[51], LocalidadCliente[51], sexoCliente;
- int idMascota, edadMascota, idTipo;
+ int idMascota, edadMascota, idTipo, idRaza;
  char nombreMascota[51],  razaMascota[51], sexoMascota;
  float pesoMascota;
 /*HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -59,13 +59,17 @@ for(int k = 1; k < 255; k++)
         {
             setError("ERROR EN LA INICIALIZACION",0);
         }
-       CargarTipoMascotas(TipoMascota,TM);
+        CargarTipoMascotas(TipoMascota,TM);
         hardCodearMascotas(Mascota,M);
-
-// printClientes(Cliente,C);
+        CargarRaza( Raza);
+            printRazaMascota(Raza);
+//printClientes(Cliente,C);
  //system("pause");
-    while(opc!=0)
-    {
+
+        do
+        {
+
+
         setSucces("MENU PRINCIPAL",0);
         printf("1)Agregar Cliente\n");
         printf("2)Modificar Cliente\n");
@@ -184,7 +188,9 @@ for(int k = 1; k < 255; k++)
                     printf("\n");
                     linea(179);
                     printf("\n");
-                    getString("Ingrese la raza de la MASCOTA",razaMascota);
+                    printf("\n");
+                    printRazaMascota(Raza);
+                    idRaza=getInt("Ingrese el id de raza de la MASCOTA",0,0);
                     printf("\n");
                     linea(179);
                     printf("\n");
@@ -198,7 +204,7 @@ for(int k = 1; k < 255; k++)
                     printf("\n");
                     sexoMascota=getGender("Ingrese el sexo de la MASCOTA (F o M)");
 
-                if(addMascota(Mascota,  M,  idMascota,  nombreMascota, idTipo, razaMascota, edadMascota, pesoMascota, sexoMascota, idCliente)==0)
+                if(addMascota(Mascota,  M,  idMascota,  nombreMascota, idTipo, idRaza, edadMascota, pesoMascota, sexoMascota, idCliente)==0)
                 {
                     setSucces("Mascota agregada exitosamente,",0);
 
@@ -214,9 +220,9 @@ for(int k = 1; k < 255; k++)
                 break;
 
             case 6://modificar mascota
-                printMascotas(Mascota,Cliente,TipoMascota);
+                printMascotas(Mascota,Cliente,TipoMascota,Raza);
                 idMascota=getInt("Ingrese la mascota a modificar.",0,0);
-                if(modifyMascota(Mascota,M,idMascota,TipoMascota)==0)
+                if(modifyMascota(Mascota,M,idMascota,TipoMascota,Raza)==0)
                 {
                  setSucces("Modificada correctamente",0);
                 }else
@@ -225,7 +231,7 @@ for(int k = 1; k < 255; k++)
                 }
                 break;
             case 7://eliminar mascota
-                printMascotas(Mascota,Cliente,TipoMascota);
+                printMascotas(Mascota,Cliente,TipoMascota,Raza);
                 idMascota=getInt("Ingrese la mascota a eliminar.",0,0);
                 if(removeMascota(Mascota,M,idMascota)==0)
                 {
@@ -237,13 +243,13 @@ for(int k = 1; k < 255; k++)
 
                 break;
             case 8:
-                printMascotas(Mascota,Cliente,TipoMascota);
+                printMascotas(Mascota,Cliente,TipoMascota,Raza);
                 break;
             case 9:
-                printClientesMascotas(Cliente,Mascota,TipoMascota);
+                printClientesMascotas(Cliente,Mascota,TipoMascota, Raza);
                 break;
                 case 10:
-                if(printMascotasOrderedByTipo(Mascota,Cliente,TipoMascota)==-1)
+                if(printMascotasOrderedByTipo(Mascota,Cliente,TipoMascota,Raza)==-1)
                 {
                     setError("No se pudo ordenar las mascotas por tipo, contactese con soporte por favor.",0);
                 }
@@ -255,13 +261,13 @@ for(int k = 1; k < 255; k++)
                 }
                 break;
                 case 12:
-                if(printMascotas3anios(Mascota,Cliente,TipoMascota)==-1)
+                if(printMascotas3anios(Mascota,Cliente,TipoMascota, Raza)==-1)
                 {
                     setError("No se pudo resolver la consulta, contactese con soporte.",0);
                 }
                 break;
                  case 13:
-                if(printMascotasByTipo(Mascota,Cliente,TipoMascota)==-1)
+                if(printMascotasByTipo(Mascota,Cliente,TipoMascota, Raza)==-1)
                 {
                     setError("No se pudo resolver la consulta, contactese con soporte.",0);
                 }
@@ -306,6 +312,6 @@ for(int k = 1; k < 255; k++)
       }
         system("pause");
       system("cls");
-      }
+}while(opc!=0);
 
 }

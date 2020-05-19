@@ -1,6 +1,6 @@
 
 #include "relacionClienteMascota.h"
-int printOneMascota(Mascota listaMascota[],Cliente Cliente[], int id, TipoMascota TipoMascota[])
+int printOneMascota(Mascota listaMascota[],Cliente Cliente[], int id, TipoMascota TipoMascota[], Raza Raza[])
 {
     int index=findMascotaById(listaMascota,M, id);
    // printOneCliente(Cliente,C,1);
@@ -9,9 +9,12 @@ int printOneMascota(Mascota listaMascota[],Cliente Cliente[], int id, TipoMascot
 
     int indexC=findClienteById(Cliente,C, listaMascota[index].idCliente);
     //printf("INDEX CLIENTE %d",indexC);
+    char razaMascota[51];
+
 
            if(index>=0)
             {
+                getRazaMascota(Raza,listaMascota[index].idRaza,razaMascota );
                 getTipoMascota(TipoMascota,listaMascota[index].idTipo,tipoMascota);
 
                     columna();
@@ -22,7 +25,7 @@ int printOneMascota(Mascota listaMascota[],Cliente Cliente[], int id, TipoMascot
                                            columna();
                                           printf(" %24s  ",tipoMascota);
                                            columna();
-                                          printf(" %14s  ",listaMascota[index].raza);
+                                          printf(" %14s  ",razaMascota);
                                          columna();
                                           printf(" %10d  ",listaMascota[index].edad);
                                           columna();
@@ -79,7 +82,7 @@ void membrete11()
 
 
 
-int printMascotas(Mascota listaMascota[], Cliente Cliente[], TipoMascota TipoMascota[])
+int printMascotas(Mascota listaMascota[], Cliente Cliente[], TipoMascota TipoMascota[], Raza Raza[])
 {
     int i, ret=-1,printRet=-1;
 
@@ -92,7 +95,7 @@ int printMascotas(Mascota listaMascota[], Cliente Cliente[], TipoMascota TipoMas
        {
 
 
-         printRet = printOneMascota(listaMascota, Cliente, listaMascota[i].id, TipoMascota);
+         printRet = printOneMascota(listaMascota, Cliente, listaMascota[i].id, TipoMascota, Raza);
 
 
           if(printRet==-1)
@@ -139,10 +142,10 @@ int removeCliente(Cliente listaCliente[],Mascota Mascota[], int id)
 
     return ret;
 }
-int printClientesMascotas(Cliente listaCliente[],Mascota Mascota[], TipoMascota TipoMascota[])
+int printClientesMascotas(Cliente listaCliente[],Mascota Mascota[], TipoMascota TipoMascota[],Raza Raza[])
 {
     int i, j,ret=-1;
-    char tipoMascota[51];
+    char tipoMascota[51], razaMascota[51];
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
    for(i=0; i<C; i++)
@@ -150,6 +153,7 @@ int printClientesMascotas(Cliente listaCliente[],Mascota Mascota[], TipoMascota 
 
        if(listaCliente[i].isEmpty==OCUPADO)
        {
+
 
             //printf("\nID CLIENTE %d",listaCliente[i].id);
            // setSucces("Cliente:",0);
@@ -163,6 +167,7 @@ int printClientesMascotas(Cliente listaCliente[],Mascota Mascota[], TipoMascota 
             printf("\n");
 
 
+
             getTipoMascota(TipoMascota,Mascota[i].idTipo,tipoMascota);
             membreteMascotas();
             for(j=0;j<M;j++)
@@ -170,7 +175,7 @@ int printClientesMascotas(Cliente listaCliente[],Mascota Mascota[], TipoMascota 
                 if(listaCliente[i].id==Mascota[j].idCliente)
                 {
 
-
+                        getRazaMascota(Raza,Mascota[j].idRaza, razaMascota);
                        getTipoMascota(TipoMascota,Mascota[j].idTipo,tipoMascota);
 
                     columna();
@@ -181,7 +186,7 @@ int printClientesMascotas(Cliente listaCliente[],Mascota Mascota[], TipoMascota 
                                            columna();
                                           printf(" %24s  ",tipoMascota);
                                            columna();
-                                          printf(" %14s  ",Mascota[j].raza);
+                                          printf(" %14s  ",razaMascota);
                                          columna();
                                           printf(" %10d  ",Mascota[j].edad);
                                           columna();
@@ -307,10 +312,10 @@ void membreteMascotasCliente()
     printf("\n");
 }
 
-int printMascotasOrderedByTipo(Mascota listaMascota[], Cliente Cliente[], TipoMascota TipoMascota[])
+int printMascotasOrderedByTipo(Mascota listaMascota[], Cliente Cliente[], TipoMascota TipoMascota[],Raza Raza[])
 {
     int i,j, ret=-1;
-    char tipoMascota[51];
+    char tipoMascota[51], razaMascota[51];
     printf("\n");
         HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
@@ -362,14 +367,14 @@ int printMascotasOrderedByTipo(Mascota listaMascota[], Cliente Cliente[], TipoMa
 
 
                                getTipoMascota(TipoMascota,listaMascota[z].idTipo,tipoMascota);
-
+                                getRazaMascota(Raza,listaMascota[z].idTipo, razaMascota);
                             columna();
                             columna();
                            printf("%6d  ",listaMascota[z].id);
                            columna();
                                                   printf(" %36s  ", listaMascota[z].nombre);
                                                    columna();
-                                                  printf(" %14s  ",listaMascota[z].raza);
+                                                  printf(" %14s  ",razaMascota);
                                                  columna();
                                                   printf(" %10d  ",listaMascota[z].edad);
                                                   columna();
@@ -405,7 +410,7 @@ int printMascotasOrderedByTipo(Mascota listaMascota[], Cliente Cliente[], TipoMa
     return ret;
 }
 
-int printMascotas3anios(  Mascota listaMascota[], Cliente Cliente[],TipoMascota TipoMascota[])
+int printMascotas3anios(  Mascota listaMascota[], Cliente Cliente[],TipoMascota TipoMascota[],Raza Raza[])
 {
     int i, ret=-1;
 
@@ -417,7 +422,7 @@ int printMascotas3anios(  Mascota listaMascota[], Cliente Cliente[],TipoMascota 
        {
             if(listaMascota[i].edad>3)
             {
-                 if(printOneMascota(listaMascota, Cliente, listaMascota[i].id, TipoMascota)==-1)
+                 if(printOneMascota(listaMascota, Cliente, listaMascota[i].id, TipoMascota,Raza)==-1)
                 {
                       setError("No se encpontro ningun registro.",0);
                       ret=-1;
@@ -439,10 +444,10 @@ int printMascotas3anios(  Mascota listaMascota[], Cliente Cliente[],TipoMascota 
 }
 
 
-int printMascotasByTipo(Mascota listaMascota[], Cliente Cliente[], TipoMascota TipoMascota[])
+int printMascotasByTipo(Mascota listaMascota[], Cliente Cliente[], TipoMascota TipoMascota[], Raza Raza[])
 {
     int i,j, ret=-1,opc;
-    char tipoMascota[51];
+    char tipoMascota[51], razaMascota[51];
     printf("\n");
         HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
         printTiposMascota(TipoMascota,TM);
@@ -499,6 +504,7 @@ int printMascotasByTipo(Mascota listaMascota[], Cliente Cliente[], TipoMascota T
                         if(Cliente[i].id==listaMascota[z].idCliente && listaMascota[z].idTipo==j+1)
                         {
 
+                                    getRazaMascota(Raza,listaMascota[z].idTipo, razaMascota);
 
                                getTipoMascota(TipoMascota,listaMascota[z].idTipo,tipoMascota);
 
@@ -508,7 +514,7 @@ int printMascotasByTipo(Mascota listaMascota[], Cliente Cliente[], TipoMascota T
                            columna();
                                                   printf(" %36s  ", listaMascota[z].nombre);
                                                    columna();
-                                                  printf(" %14s  ",listaMascota[z].raza);
+                                                  printf(" %14s  ",razaMascota);
                                                  columna();
                                                   printf(" %10d  ",listaMascota[z].edad);
                                                   columna();
@@ -844,8 +850,7 @@ int promedioEdadMascota(Mascota Mascota[])
 
 int promedioEdadMascotaByTipo(Mascota Mascota[], TipoMascota TipoMascota[])
 {
-    int i,j, ret=-1,contEdad,cantMascotas,promEdad;
-    char tipoMascota[51];
+    int i, j,ret=-1,contEdad,cantMascotas,promEdad;
     printf("\n");
         HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
@@ -901,11 +906,11 @@ int promedioEdadMascotaByTipo(Mascota Mascota[], TipoMascota TipoMascota[])
 
 int promedioClientesBySexo(Cliente Cliente[])
 {
-    int i,j, ret=-1,cantMujeres=0,cantHombres=0,totClientes;
+    int i, ret=-1,cantMujeres=0,cantHombres=0,totClientes;
     float promMujeres,promHombres,porcMujeres,porcHombres;
 
     printf("\n");
-        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
 
 
 

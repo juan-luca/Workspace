@@ -5,7 +5,7 @@
 1589769055 c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\clientes.h
 	"GeneralCommands.h"
 
-1589764514 c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\generalcommands.h
+1589889322 c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\generalcommands.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -24,7 +24,7 @@
 	<conio.h>
 	<windows.h>
 
-1589756740 source:c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\main.c
+1589889368 source:c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -34,17 +34,17 @@
 	<windows.h>
 	"MenuABM.h"
 
-1589821700 c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\menuabm.h
+1589889368 c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\menuabm.h
 	"GeneralCommands.h"
 	"relacionClienteMascota.h"
 
-1589757362 c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\mascotas.h
+1589890824 c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\mascotas.h
 	"GeneralCommands.h"
 
-1589823170 source:c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\mascotas.c
+1589891451 source:c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\mascotas.c
 	"mascotas.h"
 
-1589824964 source:c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\menuabm.c
+1589891788 source:c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\menuabm.c
 	"MenuABM.h"
 	<stdio.h>
 	<stdlib.h>
@@ -54,10 +54,10 @@
 	<conio.h>
 	<windows.h>
 
-1589824955 c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\relacionclientemascota.h
+1589891394 c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\relacionclientemascota.h
 	"clientes.h"
 	"mascotas.h"
 
-1589824955 source:c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\relacionclientemascota.c
+1589891746 source:c:\users\juan\desktop\utn\programacion\workspace\parcial mascotas\relacionclientemascota.c
 	"relacionClienteMascota.h"
 
