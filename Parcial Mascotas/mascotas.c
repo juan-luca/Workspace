@@ -39,7 +39,7 @@ void hardCodearMascotas(Mascota mascota[], int tam )
     int i;
    int id[11]={100,101,102,103,104,105,106,107,108,109,110};
     int idCliente[11]={1,3,1,2,3,3,4,2,5,5,5};
-    char nombre[11][51]={{"Mia"},{"Manuela"},{"Dero"},{"nuni"},{"jart"},{"carlin"},{"cucu"},{"clanca"},{"rey"},{"mini"},{"donald"}};
+    char nombre[11][51]={{"Mia"},{"Manuela"},{"Dero"},{"Nuni"},{"Jart"},{"Carlin"},{"Cucu"},{"Clanca"},{"Rey"},{"Mini"},{"Donald"}};
     int idTipo[11]={1,2,1,2,1,2,1,3,1,1,2};
     int idRaza[11]={6,2,5,2,6,3,5,7,5,5,1};
     int edad[11]={10,11,5,3,5,2,7,1,9,6,4};

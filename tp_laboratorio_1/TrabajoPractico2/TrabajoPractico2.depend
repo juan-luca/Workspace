@@ -51,7 +51,7 @@
 	<windows.h>
 	"GeneralCommands.c"
 
-1589586663 source:c:\users\juan\desktop\utn\programacion\workspace\tp_laboratorio_1\trabajopractico2\generalcommands.c
+1589590112 source:c:\users\juan\desktop\utn\programacion\workspace\tp_laboratorio_1\trabajopractico2\generalcommands.c
 	"GeneralCommands.h"
 	<stdio.h>
 	<stdlib.h>
@@ -72,7 +72,7 @@
 	<stdio.h>
 	"GeneralCommands.h"
 
-1589587319 source:c:\users\juan\desktop\utn\programacion\workspace\tp_laboratorio_1\trabajopractico2\arrayemployees.c
+1589643464 source:c:\users\juan\desktop\utn\programacion\workspace\tp_laboratorio_1\trabajopractico2\arrayemployees.c
 	"ArrayEmployees.h"
 	<stdio.h>
 	<stdlib.h>

@@ -127,12 +127,12 @@ int removeCliente(Cliente listaCliente[],Mascota Mascota[], int id)
    {
        if(index==i)
        {
-            //indexM=findMascotaByClienteId(Mascota,M,id);
-           // printf("\nINDEX MASCOTA %d",indexM);
+
            listaCliente[i].isEmpty=ELIMINADO;
            removeMascotaByCliente(Mascota,M,id);
            ret=0;
            break;
+
        }else
        {
            ret = -1;
@@ -146,6 +146,7 @@ int printClientesMascotas(Cliente listaCliente[],Mascota Mascota[], TipoMascota 
 {
     int i, j,ret=-1;
     char tipoMascota[51], razaMascota[51];
+
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
    for(i=0; i<C; i++)
@@ -168,11 +169,11 @@ int printClientesMascotas(Cliente listaCliente[],Mascota Mascota[], TipoMascota 
 
 
 
-            getTipoMascota(TipoMascota,Mascota[i].idTipo,tipoMascota);
+            //getTipoMascota(TipoMascota,Mascota[i].idTipo,tipoMascota);
             membreteMascotas();
             for(j=0;j<M;j++)
             {
-                if(listaCliente[i].id==Mascota[j].idCliente)
+                if(listaCliente[i].id==Mascota[j].idCliente && Mascota[j].isEmpty==OCUPADO)
                 {
 
                         getRazaMascota(Raza,Mascota[j].idRaza, razaMascota);
@@ -1244,13 +1245,31 @@ int printClientesIdemSexo(Cliente listaCliente[], Mascota Mascota[])
        if(listaCliente[i].isEmpty==OCUPADO)
        {
 
-            //printf("\nID CLIENTE %d",listaCliente[i].id);
+
             if(cantMascotaF[i]>1 || cantMascotaM[i]>1)
             {
 
 
             printRet = printOneCliente(listaCliente, C, listaCliente[i].id);
+
+
             }
+            /* segunda opcion punto 19
+            if(cantMascotaF[i]==0 && cantMascotaM[i]>1)
+            {
+
+
+            printRet = printOneCliente(listaCliente, C, listaCliente[i].id);
+
+
+            }
+            else
+            {
+                if(cantMascotaF[i]>1 && cantMascotaM[i]==0)
+                {
+                    printRet = printOneCliente(listaCliente, C, listaCliente[i].id);
+                }
+            }*/
           if(printRet==-1)
           {
               setError("Registro no encontrado",0);

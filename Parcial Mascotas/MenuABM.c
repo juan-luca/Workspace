@@ -152,6 +152,7 @@ for(int k = 1; k < 255; k++)
             case 3:
                 printClientes(Cliente,C);
                 idCliente=getInt("Ingrese el ID a eliminar",0,0);
+
                 if(findClienteById(Cliente,C,idCliente)!= -1)
                 {
                     if(removeCliente(Cliente,Mascota,idCliente)!= -1)
@@ -172,6 +173,7 @@ for(int k = 1; k < 255; k++)
             case 5:
                 printClientes(Cliente,C);
                 idCliente=getInt("Ingrese el id de CLIENTE:",0,0);
+
                 if(findClienteById(Cliente,C,idCliente)!= -1)
                 {
 
@@ -191,7 +193,7 @@ for(int k = 1; k < 255; k++)
                     printf("\n");
                     printf("\n");
                     printRazaMascota(Raza);
-                    idRaza=getInt("Ingrese el id de raza de la MASCOTA",0,0);
+                    idRaza=getInt("Ingrese el id de raza de la MASCOTA",1,R);//VERIFICAR ID DE TABLA
                     printf("\n");
                     linea(179);
                     printf("\n");
@@ -205,13 +207,13 @@ for(int k = 1; k < 255; k++)
                     printf("\n");
                     sexoMascota=getGender("Ingrese el sexo de la MASCOTA (F o M)");
 
-                if(addMascota(Mascota,  M,  idMascota,  nombreMascota, idTipo, idRaza, edadMascota, pesoMascota, sexoMascota, idCliente)==0)
-                {
-                    setSucces("Mascota agregada exitosamente,",0);
+                        if(addMascota(Mascota,  M,  idMascota,  nombreMascota, idTipo, idRaza, edadMascota, pesoMascota, sexoMascota, idCliente)==0)
+                        {
+                            setSucces("Mascota agregada exitosamente,",0);
 
-                }else
-                {
-                    setError("No se pudo agregar la MASCOTA",0);
+                        }else
+                        {
+                            setError("No se pudo agregar la MASCOTA",0);
                 }
 
                }else

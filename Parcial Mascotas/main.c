@@ -17,12 +17,6 @@ int main()
     Raza Raza[R];
 
     MenuABM(Mascota, Cliente, TipoMascota, Raza);
-   /* Orquesta Orquesta[tOrquesta];
-    TipoOrquesta TipoOrquesta[3];
-    Instrumento Instrumento[tInstrumento];
-    Musico Musico[tMusico];
 
-    hardCodearTipoOrquesta(TipoOrquesta,tTipoOrquesta);
-    MenuABM(Orquesta, Instrumento,Musico, tOrquesta);*/
     return 0;
 }
