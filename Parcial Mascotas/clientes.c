@@ -125,7 +125,7 @@ int modifyCliente(Cliente listaCliente[],int tam,int id)
     int  edadCliente, sexoCliente, telefonoCliente;
      char nombreCliente[51], localidadCliente[51], apellidoCliente[51];
 
-     int modificado[6]={0,0,0,0,0,0};//
+     int modificado[6]={0,0,0,0,0,0};
     if(index!=-1)
     {
 
@@ -307,60 +307,7 @@ int modifyCliente(Cliente listaCliente[],int tam,int id)
     return ret;
 }
 
-/*
-int modifyCliente(Cliente listaCliente[],int tam,int id)
-{
-    int columnaModificar, ret=-1;//AGREGAR SELECCION DE COLUMNA A MODIFICAR
-    int index=findClienteById(listaCliente,tam,id);
-    if(index!=-1)
-    {
 
-
-    do
-    {
-
-                    system("cls");
-
-
-            printf("1)Nombre\n2)Apellido\n3)Tipo de Cliente\n");
-            columnaModificar=getInt("Escriba el campo que desea modificar: \n Presiones 0 para salir...",0,3);
-            switch(columnaModificar)
-            {
-            case 1:
-                getString("Ingrese el nombre nuevo: ",listaCliente[index].nombre);
-
-               //printOnCliente(listaCliente,tam, id);
-
-                ret=0;
-                break;
-
-            case 2:
-                getString("Ingrese el apellido nuevo: ",listaCliente[index].apellido);
-                //printOnCliente(listaCliente,tam, id);
-                ret=0;
-                break;
-            case 3:
-                listaCliente[index].edad=getInt("Escriba el edad nuevo:",0,0);
-               // printOnCliente(listaCliente,tam, id);
-                ret=0;
-                break;
-                case 4:
-                listaCliente[index].idOrquesta=getInt("Escriba la orquesta nuevo:",0,0);
-               // printOnCliente(listaCliente,tam, id);
-                ret=0;
-                break;
-                case 5:
-                listaCliente[index].idInstrumento=getInt("Escriba el instrumento nuevo:",0,0);
-               // printOnCliente(listaCliente,tam, id);
-                ret=0;
-                break;
-
-            }
-    }while(columnaModificar!=0);
-}
-    return ret;
-}
-*/
 
 int printOneCliente(Cliente listaCliente[], int tam, int id)
 {

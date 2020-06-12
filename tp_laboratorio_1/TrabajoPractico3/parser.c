@@ -33,7 +33,7 @@ int parser_EmployeeFromText(FILE* pFile, LinkedList* pArrayListEmployee)
 
 
 
-        ll_add(pArrayListEmployee,employee);
+        ret=ll_add(pArrayListEmployee,employee);
 
 
 
@@ -41,31 +41,10 @@ int parser_EmployeeFromText(FILE* pFile, LinkedList* pArrayListEmployee)
 
 
 
-   ////BINARY CREATE
-// printf("len = %d",ll_len(pArrayListEmployee));
 
 
 
-    /*  FILE* fBinary;
-       fBinary = fopen("data.dat", "wb");
-
-        for(int j=0;j<ll_len(pArrayListEmployee);j++)
-        {
-        employee=(Employee*)ll_get(pArrayListEmployee,j);
-
-
-        fwrite(employee, sizeof(Employee), 1, fBinary);
-
-        //printf("%d -%s - %d - %d\n", employee->id, employee->nombre, employee->horasTrabajadas, employee->sueldo);
-        }
-
-
-    fclose(fBinary);
-*/
-
-
-
-    return 0;
+    return ret;
 
 }
 
@@ -81,11 +60,12 @@ int parser_EmployeeFromBinary(FILE* pFile, LinkedList* pArrayListEmployee)
 
    while(!feof(pFile))
    {
-       employee =(Employee*) malloc(sizeof(Employee));
 
-       if(fread(employee,sizeof(Employee),1,pFile)==1)
+       employee = employee_new();
+        ret=fread(employee,sizeof(Employee),1,pFile);
+       if(ret==1)
        {
-            ll_add(pArrayListEmployee,employee);
+            ret=ll_add(pArrayListEmployee,employee);
        }
 
 

@@ -23,7 +23,7 @@
 int main()
 {
     LinkedList* pArrayListEmployee = ll_newLinkedList();
-
+ Employee* employee;
 
 
 
@@ -31,6 +31,7 @@ int main()
     /**********************************************************************/
     int i;
       int opc;
+      int flagCarga=-1;
 
     //HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
@@ -67,12 +68,18 @@ int main()
       {
             case 1:////carga mediante texto
 
+                if(flagCarga==1)
+                {
+                ll_deleteLinkedList(pArrayListEmployee);
+                pArrayListEmployee = ll_newLinkedList();
+                }
 
 
                 if(controller_loadFromText("data.csv",pArrayListEmployee)!=-1)
                 {
 
                     setSucces("Carga realizada exitosamente",0);
+                    flagCarga=1;
 
                 }else
                 {
@@ -82,10 +89,18 @@ int main()
                 break;
             case 2://carga mediante binary text
 
-                if(controller_loadFromBinary("data.dat",pArrayListEmployee)!=-1)
+
+                if(flagCarga==1)
+                {
+                ll_deleteLinkedList(pArrayListEmployee);
+                pArrayListEmployee = ll_newLinkedList();
+                }
+
+                if(controller_loadFromBinary("data.bin",pArrayListEmployee)!=-1)
                 {
 
                     setSucces("Carga realizada exitosamente",0);
+                    flagCarga=1;
 
                 }else
                 {
@@ -94,26 +109,127 @@ int main()
 
                 break;
             case 3://ALTA EMPLEADO
-                if(controller_addEmployee(pArrayListEmployee)==-1)
+                if(flagCarga==1)
                 {
-                    setError("No se pudo agregar el empleado",0);
+
+
+                    if(controller_addEmployee(pArrayListEmployee)!=0)
+                    {
+                        setError("No se pudo agregar el empleado",0);
+                    }else
+                    {
+                        setSucces("Empleado agregado con exito.",0);
+                    }
+                }else
+                {
+                    setError("Primero debe cargar los archivos de datos en la opcion 1 o 2",0);
                 }
 
                 break;
-            case 4:
+                case 4://EDIT EMPLEADO
+                if(flagCarga==1)
+                {
+
+
+                    if(controller_editEmployee(pArrayListEmployee)!=0)
+                    {
+                        setError("No se pudo modificar el empleado",0);
+                    }else
+                    {
+                        setSucces("Empleado modificado con exito.",0);
+                    }
+                }else
+                {
+                    setError("Primero debe cargar los archivos de datos en la opcion 1 o 2",0);
+                }
+
+
+
+
+            break;
+            case 5://BAJA EMPLEADO
+                if(flagCarga==1)
+                {
+
+
+                      if(controller_removeEmployee(pArrayListEmployee)!=0)
+                        {
+                            setError("No se pudo eliminar el empleado",0);
+                        }else
+                        {
+                            setSucces("Empleado eliminado con exito.",0);
+                        }
+                }else
+                {
+                    setError("Primero debe cargar los archivos de datos en la opcion 1 o 2",0);
+                }
+
 
 
 
             break;
 
             case 6:
-
-                if(controller_ListEmployee(pArrayListEmployee)==-1)
+                 if(flagCarga==1)
                 {
-                    setError("No se pudo listar los empleados",0);
+
+                     if(controller_ListEmployee(pArrayListEmployee)==-1)
+                    {
+                        setError("No se pudo listar los empleados",0);
+                    }
+
+
+                }else
+                {
+                    setError("Primero debe cargar los archivos de datos en la opcion 1 o 2",0);
                 }
 
+
             break;
+            case 7:
+                 if(flagCarga==1)
+                {
+                    if(controller_sortEmployee(pArrayListEmployee)==-1)
+                        {
+                            setError("No se pudo ordenar los empleados",0);
+                        }else
+                        {
+                            setSucces("Se realizo correctamente el ordenamiento.",0);
+                        }
+
+
+
+
+
+                }else
+                {
+                    setError("Primero debe cargar los archivos de datos en la opcion 1 o 2",0);
+                }
+                break;
+            case 8:
+                 if(flagCarga==1)
+                {
+
+
+
+                }else
+                {
+                    setError("Primero debe cargar los archivos de datos en la opcion 1 o 2",0);
+                }
+                break;
+            case 9:
+
+
+                 if(flagCarga==1)
+                {
+
+
+
+                }else
+                {
+                    setError("Primero debe cargar los archivos de datos en la opcion 1 o 2",0);
+                }
+                break;
 
 
       }
@@ -121,53 +237,6 @@ int main()
       system("cls");
       }while(opc!=0);
       /**********************************************************************/
-    /*e1->id = 5;
-    e1->horasTrabajadas = 10;
-    strcpy(e1->nombre,"Juan");
-    e1->sueldo = 10000;
-
-    e2->id = 1;
-    e2->horasTrabajadas = 15;
-    strcpy(e2->nombre,"Martin");
-    e2->sueldo = 15000;
-
-    e3->id = 3;
-    e3->horasTrabajadas = 10;
-    strcpy(e3->nombre,"Aria");
-    e3->sueldo = 20000;
-
-    ll_add(miLista, e1);
-    ll_add(miLista, e2);
-    ll_add(miLista, e3);
-
-
-
-    size = ll_len(miLista);
-
-
-    ll_sort(miLista,employee_CompareById,0);
-
-    for(i=0; i<size; i++)
-    {
-        aux =(Employee*) ll_get(miLista, i);
-        printf("%d--%s--%d--%d\n", aux->id, aux->nombre, aux->horasTrabajadas, aux->sueldo);
-
-    }*/
-
-/*    printf("Remuevo 1\n");
-
-    ll_remove(miLista, 1);
-
-    size = ll_len(miLista);
-    for(i=0; i<size; i++)
-    {
-        aux =(Employee*) ll_get(miLista, i);
-        printf("%d--%s--%d--%d\n", aux->id, aux->nombre, aux->horasTrabajadas, aux->sueldo);
-
-    }
-
-    printf("El indice de e2 es: %d\n", ll_indexOf(miLista,e3));
-    */
 
 
 

@@ -3,99 +3,7 @@
 #include <string.h>
 
 
-//setters
-/*int set_id(Employee* employee, int id)
-{
-    int ret = -1;
-    if(employee!=NULL && id!=NULL)
-    {
-        employee->id = id;
-        ret = 0;
-    }
 
-    return ret;
-}
-int set_nombre(Employee* employee, char* nombre)
-{
-    int ret = -1;
-    if(employee!=NULL && nombre!=NULL)
-    {
-        strcpy(employee->nombre,nombre);
-        ret = 0;
-    }
-
-    return ret;
-}
-int set_horasTrabajadas(Employee* employee, int horas)
-{
-    int ret = -1;
-    if(employee!=NULL && horas!=NULL)
-    {
-        employee->horasTrabajadas = horas;
-        ret = 0;
-    }
-
-    return ret;
-}
-int set_sueldo(Employee* employee, int sueldo)
-{
-    int ret = -1;
-    if(employee!=NULL && sueldo!=NULL)
-    {
-        employee->sueldo = sueldo;
-        ret = 0;
-    }
-
-    return ret;
-}
-*/
-//getters
-/*
-int get_id(Employee* employee)
-{
-    int ret = -1;
-    if(employee!=NULL )
-    {
-        ret=employee->id;
-
-    }
-
-    return ret;
-}
-char* get_nombre(Employee* employee)
-{
-    char* ret="-1";
-    if(employee!=NULL )
-    {
-
-        strcpy(ret,employee->nombre);
-
-    }
-
-    return ret;
-}
-int get_horasTrabajadas(Employee* employee)
-{
-    int ret = -1;
-    if(employee!=NULL )
-    {
-        ret=employee->horasTrabajadas;
-
-    }
-
-    return ret;
-}
-int get_sueldo(Employee* employee)
-{
-    int ret = -1;
-    if(employee!=NULL )
-    {
-        ret=employee->sueldo;
-
-    }
-
-    return ret;
-}*/
 int employee_setNombre(Employee* this,char* nombre)
 {
     int ret = -1;
@@ -107,7 +15,28 @@ int employee_setNombre(Employee* this,char* nombre)
 
     return ret;
 }
+void cabecera()
+{
+    printf("\n");
+    linea(184);
+    printf("\n");
+            columna();
+            columna();
+           printf("    ID   ");
+           columna();
 
+           printf("                                                                                                                          Nombre    ");
+           columna();
+           printf(" Horas Trabajadas ");
+           columna();
+           printf("      Sueldo     ");
+           columna();
+           columna();
+
+    printf("\n");
+    linea(184);
+    printf("\n");
+}
 int employee_getNombre(Employee* this,char* nombre)
 {
     int ret=-1;
@@ -230,34 +159,86 @@ Employee* employee_newParametros(int idStr,char* nombreStr,int horasTrabajadasSt
 
 int employee_CompareByName(Employee* e1, Employee* e2)
 {
-    //verificar nulidad
 
-    return strcmp(e1->nombre, e2->nombre);
+    int ret=-1;
+    char nombre1[128];
+    char nombre2[128];
+    employee_getNombre(e1,nombre1);
+    employee_getNombre(e2,nombre2);
+
+
+
+
+    if(e1!=NULL || e2!=NULL)
+    {
+        ret=strcmp(nombre1, nombre2);
+    }
+    return ret;
 }
+
+/*int employee_CompareById(Employee* e1, Employee* e2)
+{
+    int ret=-1;
+
+
+  if(e1!=NULL || e2!=NULL)
+    {
+
+
+
+        if(e1->id > e2->id)
+        {
+            return 1;
+        }
+        else
+        {
+            if(e1->id < e2->id)
+            {
+                ret=2;
+            }
+
+        }
+
+    }
+
+
+    return ret;
+}*/
 
 int employee_CompareById(Employee* e1, Employee* e2)
 {
     //verificar nulidad
+    int id1=employee_getId(e1,id1);
+    int id2=employee_getId(e2,id2);
+    int ret;
 
-    if(e1->id > e2->id)
+
+
+ if(e1!=NULL || e2!=NULL)
     {
-        return 1;
-    }
-    else
-    {
-        if(e1->id < e2->id)
+
+        if(id1 > id2)
         {
-            return -1;
+
+            ret= 1;
         }
         else
         {
-            return 0;
+            if(id1 < id2)
+            {
+
+                ret= -1;
+            }
+            else
+            {
+                ret=0;
+            }
         }
     }
 
 
 
-    return strcmp(e1->nombre, e2->nombre);
+    return ret;
 }
 
 

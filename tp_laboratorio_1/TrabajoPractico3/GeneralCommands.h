@@ -24,6 +24,13 @@ int getInt(char [], int , int );
 *-Int - el rango maximo a validar
 *-Int - devuelve el valor validado
 */
+int getIntPos(char []);
+/**
+*-GetIntPos Es una variacion de getInt() la cual solo valida que el numero sea postivo (>0)
+*
+*-Char[]-mensaje de ingreso del dato
+*-Int - devuelve el valor validado
+*/
 void getString(char [], char []);
 /**
 *-GetString valida la cadena ingresada y pide rellarla con la cadena ingresada

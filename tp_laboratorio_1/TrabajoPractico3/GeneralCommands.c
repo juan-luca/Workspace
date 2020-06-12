@@ -43,6 +43,31 @@ void getString(char msg[], char String[]){
         String[tam-1] = '\0';
 }
 
+int getIntPos(char mensaje[])
+{
+
+    int ValorEntero=0;
+    int noValidar=0;
+
+
+
+    printf("%s \n",mensaje);
+    fflush(stdin);
+    scanf("%d",&ValorEntero);
+
+
+    while(ValorEntero <= 0)
+    {
+        setError(mensaje,0);
+        scanf("%d",&ValorEntero);
+    }
+
+
+
+
+    return ValorEntero;
+}
+
 int getInt(char mensaje[], int min, int max)
 {
 
