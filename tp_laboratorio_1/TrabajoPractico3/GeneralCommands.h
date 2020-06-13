@@ -88,3 +88,7 @@ char getGender(char [] );
 *-Char[]-mensaje de ingreso del dato
 *-return char - variable a guardar el caracter validado
 */
+void caratula();
+/**
+*-draw the TP number
+*/

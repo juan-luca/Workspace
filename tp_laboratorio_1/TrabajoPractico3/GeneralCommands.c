@@ -221,3 +221,75 @@ char gender;
     }
 return gender;
 }
+
+
+void caratula()
+{
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    /* for(int k = 1; k < 256; k++)
+                  {
+
+                      SetConsoleTextAttribute(hConsole, k);
+                      printf("EL COLOR ES    %d\n",k);
+
+
+
+                  }*/
+                for(int k = 15; k < 223; k=k+16)
+                  {
+                      system("cls");
+                      //SetConsoleTextAttribute(hConsole, k);
+                      printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+                        SetConsoleTextAttribute(hConsole, 7);
+                        printf("                                                              ");
+                        SetConsoleTextAttribute(hConsole, k);
+                        printf("                                                                                 \n");
+                        SetConsoleTextAttribute(hConsole, 7);
+                        printf("                                                              ");
+                        SetConsoleTextAttribute(hConsole, k);
+                        printf("                            _______   _____    _____                             \n");
+                        SetConsoleTextAttribute(hConsole, 7);
+                        printf("                                                              ");
+                        SetConsoleTextAttribute(hConsole, k);
+                        printf("                           |__   __| |  __ |  |___ /                             \n");
+                        SetConsoleTextAttribute(hConsole, 7);
+                        printf("                                                              ");
+                        SetConsoleTextAttribute(hConsole, k);
+                        printf("                              | |    | |__) |   __)|                             \n");
+                        SetConsoleTextAttribute(hConsole, 7);
+                        printf("                                                              ");
+                        SetConsoleTextAttribute(hConsole, k);
+                        printf("                              | |    |  ___/   |__ <                             \n");
+                        SetConsoleTextAttribute(hConsole, 7);
+                        printf("                                                              ");
+                        SetConsoleTextAttribute(hConsole, k);
+                        printf("                              | |    | |       ___)|                             \n");
+                        SetConsoleTextAttribute(hConsole, 7);
+                        printf("                                                              ");
+                        SetConsoleTextAttribute(hConsole, k);
+                        printf("                              |_|    |_|      |____/                             \n");
+                        SetConsoleTextAttribute(hConsole, 7);
+                        printf("                                                              ");
+                        SetConsoleTextAttribute(hConsole, k);
+                        printf("                                                                                 \n");
+                        SetConsoleTextAttribute(hConsole, 7);
+                        printf("                                                              ");
+                        SetConsoleTextAttribute(hConsole, k);
+                        printf("                                                                                 \n");
+
+                        SetConsoleTextAttribute(hConsole, 7);
+                    //k=k+15;
+
+                  }
+                 // SetConsoleTextAttribute(hConsole, 7);
+                 for(int i=-999999999;i<9999999;i++)
+                 {
+
+                 }
+
+
+
+
+  printf("\n\n\n\n\n\n\n\n\n\n\n\n");
+}

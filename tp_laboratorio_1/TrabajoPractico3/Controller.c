@@ -458,17 +458,19 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
             switch(opc)
             {
             case 1:
-                linea(10);
+                linea(51);
                 printf(" Nombre ");
-                 linea(10);
+                 linea(51);
                  printf("\n");
 
                  printf("\n1)A-Z");
                  printf("\n2)Z-A");
-                 opc=getInt("",1,2);
+
                  printf("\n\n");
                  linea(110);
                  printf("\n\n");
+                 opc=getInt("",1,2);
+
 
                         switch(opc)
                         {
@@ -489,9 +491,9 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
 
             case 2:
 
-                 linea(10);
+                 linea(51);
                  printf("   ID   ");
-                 linea(10);
+                 linea(51);
                  printf("\n");
 
                  printf("\n1)Ascendente");

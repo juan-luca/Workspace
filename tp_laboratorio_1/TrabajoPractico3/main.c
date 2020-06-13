@@ -22,6 +22,8 @@
 
 int main()
 {
+    caratula();
+    system("cls");
     LinkedList* pArrayListEmployee = ll_newLinkedList();
 
 
