@@ -1,9 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "LinkedList.h"
-#include "Employee.h"
-#include "parser.h"
+
+#include "GeneralCommands.h"
+#include "Controller.h"
 
 
 
@@ -40,6 +37,7 @@ int controller_lastId(LinkedList* pArrayListEmployee)
     int i;
     int lastid=0;
     int len=ll_len(pArrayListEmployee);
+    int maxid=0;
 
     Employee* employee;
     for(i=0;i<len;i++)
@@ -48,10 +46,14 @@ int controller_lastId(LinkedList* pArrayListEmployee)
 
         employee = ll_get(pArrayListEmployee,i);
 
-        lastid=employee_getId(employee,lastid);
+        employee_getId(employee,&lastid);
+        if(lastid>maxid)
+        {
+            maxid=lastid;
+        }
 
     }
-    return lastid;
+    return maxid;
 }
 
 int controller_addEmployee(LinkedList* pArrayListEmployee)
@@ -125,9 +127,9 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
     int i;
     int opc;
     int len=ll_len(pArrayListEmployee);
-    int id;
-    int horas;
-    int sueldo;
+    int id=0;
+    int horas=0;
+    int sueldo=0;
     char nombre[128];
 
     int horasNuevo;
@@ -146,7 +148,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
         employee = employee_new();
 
         employee = ll_get(pArrayListEmployee,i);
-        queryId=employee_getId(employee,queryId);
+        employee_getId(employee,&queryId);
         if(id==queryId)
         {
             break;
@@ -154,10 +156,10 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
 
     }
 
-        id=employee_getId(employee,id);
+        employee_getId(employee,&id);
         employee_getNombre(employee,nombre);
-        horas=employee_getHorasTrabajadas(employee,horas);
-        sueldo=employee_getSueldo(employee,sueldo);
+        employee_getHorasTrabajadas(employee,&horas);
+        employee_getSueldo(employee,&sueldo);
 
     system("cls");
     cabecera();
@@ -168,9 +170,9 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
         columna();
         printf("%128s    ", nombre);
         columna();
-        printf("  %8.d        ", horas);
+        printf("%16.d  ", horas);
         columna();
-        printf("  %10.d     ", sueldo);
+        printf("%15.d  ", sueldo);
         columna();
         columna();
         printf("\n");
@@ -222,7 +224,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
 
             }
     }while(columnaModificar!=0);
-
+    system("cls");
     setSucces("Desea realizar las siguientes modificaciones? (SI=1 o NO=2)",0);
 
                     for(i=0;i<3;i++)
@@ -299,13 +301,12 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
                 }
         }
 
-        //ll_remove(pArrayListEmployee,ll_indexOf(pArrayListEmployee,employee));
-            //employee_setId(employee,id);
+
             employee_setNombre(employee,nombre);
             employee_setHorasTrabajadas(employee,horas);
             employee_setSueldo(employee,sueldo);
            ret= ll_set(pArrayListEmployee,ll_indexOf(pArrayListEmployee,employee),employee);
-        //ll_add(pArrayListEmployee,employee);
+
 
     }else
     {
@@ -326,9 +327,9 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
     int i;
     int opc;
     int len=ll_len(pArrayListEmployee);
-    int id;
-    int horas;
-    int sueldo;
+    int id=0;
+    int horas=0;
+    int sueldo=0;
     char nombre[128];
 
     Employee* employee;
@@ -342,7 +343,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
         employee = employee_new();
 
         employee = ll_get(pArrayListEmployee,i);
-        queryId=employee_getId(employee,queryId);
+        employee_getId(employee,&queryId);
         if(id==queryId)
         {
             break;
@@ -351,10 +352,10 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
     }
 
 
-        id=employee_getId(employee,id);
+        employee_getId(employee,&id);
         employee_getNombre(employee,nombre);
-        horas=employee_getHorasTrabajadas(employee,horas);
-        sueldo=employee_getSueldo(employee,sueldo);
+        employee_getHorasTrabajadas(employee,&horas);
+        employee_getSueldo(employee,&sueldo);
     system("cls");
         cabecera();
 
@@ -365,9 +366,9 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
         columna();
         printf("%128s    ", nombre);
         columna();
-        printf("  %8.d        ", horas);
+        printf("%16.d  ", horas);
         columna();
-        printf("  %10.d     ", sueldo);
+        printf("%15.d  ", sueldo);
         columna();
         columna();
         printf("\n");
@@ -405,19 +406,19 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
     for(i=0;i<len;i++)
     {
         employee = ll_get(pArrayListEmployee,i);
-        id=employee_getId(employee,id);
+        employee_getId(employee,&id);
         employee_getNombre(employee,nombre);
-        horas=employee_getHorasTrabajadas(employee,horas);
-        sueldo=employee_getSueldo(employee,sueldo);
+        employee_getHorasTrabajadas(employee,&horas);
+        employee_getSueldo(employee,&sueldo);
         columna();
         columna();
         printf("%6.d   ", id);
         columna();
         printf("%128s    ", nombre);
         columna();
-        printf("  %8.d        ", horas);
+        printf("%16.d  ", horas);
         columna();
-        printf("  %10.d     ", sueldo);
+        printf("%15.d  ", sueldo);
         columna();
         columna();
         printf("\n");
@@ -437,14 +438,11 @@ return ret;
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
     int ret=-1;
-    int i;
-    int j;
-    int len=ll_len(pArrayListEmployee);
+
+
     int opc;
 
-Employee* e1;
-Employee* e2;
-Employee* aux;
+
 
             system("cls");
             linea(50);
@@ -465,8 +463,8 @@ Employee* aux;
                  linea(10);
                  printf("\n");
 
-                 printf("\n1)Ascendente");
-                 printf("\n2)Descendente");
+                 printf("\n1)A-Z");
+                 printf("\n2)Z-A");
                  opc=getInt("",1,2);
                  printf("\n\n");
                  linea(110);
@@ -474,17 +472,17 @@ Employee* aux;
 
                         switch(opc)
                         {
-                        case 1:
+                            case 1:
 
-                            ll_sort(pArrayListEmployee,employee_CompareByName,1);
-                            break;
+                                ret=ll_sort(pArrayListEmployee,employee_CompareByName,1);
 
-                        case 2:
-                            //employee_CompareByName(e1,e2);
-                            //printf("aaaaaaaaaaaaaaaa");
-                            ll_sort(pArrayListEmployee,employee_CompareByName(e1,e2),0);
+                                break;
 
-                            break;
+                            case 2:
+
+                                ret=ll_sort(pArrayListEmployee,employee_CompareByName,0);
+
+                                break;
                         }
 
                 break;
@@ -507,81 +505,19 @@ Employee* aux;
                         {
                         case 1:
 
-                            ll_sort(pArrayListEmployee,employee_CompareById,1);
+                            ret=ll_sort(pArrayListEmployee,employee_CompareById,1);
 
                             break;
 
                         case 2:
 
-                            ll_sort(pArrayListEmployee,employee_CompareById,0);
+                            ret=ll_sort(pArrayListEmployee,employee_CompareById,0);
                             break;
                         }
 
                 break;
             }
 
-//ORDENA POR NOMBRE
-for(i=0;i<len-1;i++)
-{
-
-    e1=employee_new();
-    e1=ll_get(pArrayListEmployee,i);
-
-    for(j=i+1;j<len;j++)
-    {
-        e2=employee_new();
-        aux=employee_new();
-        e2=ll_get(pArrayListEmployee,j);
-
-        if(employee_CompareByName(e1,e2)>0)
-        {
-            //printf("sadsadsa");
-
-            aux = e1;
-            e1 = e2;
-            e2 = aux;
-            ret=ll_set(pArrayListEmployee,i,e1);
-            ret=ll_set(pArrayListEmployee,j,e2);
-
-
-
-        }
-
-
-    }
-
-}
-
-//ordena por ID
-for(i=0;i<len-1;i++)
-{
-
-    e1=employee_new();
-    e1=ll_get(pArrayListEmployee,i);
-
-    for(j=i+1;j<len;j++)
-    {
-
-        e2=employee_new();
-        aux=employee_new();
-        e2=ll_get(pArrayListEmployee,j);
-
-            if(employee_CompareById(e1,e2)==1)
-            {
-                aux = e1;
-                e1 = e2;
-                e2 = aux;
-                ret=ll_set(pArrayListEmployee,i,e1);
-                ret=ll_set(pArrayListEmployee,j,e2);
-
-
-            }
-
-
-
-
-    }
-}
 
 
 
@@ -591,28 +527,72 @@ return ret;
 
 int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
 {
+int ret=-1;
+int i;
+int len =ll_len(pArrayListEmployee);
+    char nombre[128];
+    char cId[128];
+    char cHoras[128];
+    char cSueldo[128];
+    int id;
+    int horas;
+    int sueldo;
+
+    Employee* employee;
+FILE* pFile;
+
+pFile = fopen("data.csv","w");
+
+ for(i=0; i<len; i++)
+    {
+        employee=employee_new();
+        employee=ll_get(pArrayListEmployee,i);
+        employee_getNombre(employee,nombre);
+        employee_getId(employee,&id);
+        employee_getHorasTrabajadas(employee,&horas);
+        employee_getSueldo(employee,&sueldo);
+
+        itoa(id,cId,10);
+
+        itoa(sueldo,cSueldo,10);
+
+        itoa(horas,cHoras,10);
+        if(i==0)
+        {
+            fprintf(pFile,"id,nombre,horasTrabajadas,sueldo\n");
+        }
+        fprintf(pFile,"%s,%s,%s,%s\n",cId,nombre,cHoras,cSueldo);
+
+        //printf("\nEL ID ES %s",cId);
+        ret=0;
 
 
-return 1;
+    }
+
+fclose(pFile);
+
+return ret;
 }
 
 
 int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
 {
       ////BINARY CREATE
-// printf("len = %d",ll_len(pArrayListEmployee));
 
-FILE* fBinary;
+        int ret=-1;
+
+       FILE* fBinary;
        fBinary = fopen(path, "wb");
        Employee* employee;
 
         for(int i=0;i<ll_len(pArrayListEmployee);i++)
         {
             employee =employee_new();
-        employee=(Employee*)ll_get(pArrayListEmployee,i);
+            employee=(Employee*)ll_get(pArrayListEmployee,i);
 
 
         fwrite(employee, sizeof(Employee), 1, fBinary);
+        ret=0;
 
         //printf("%d -%s - %d - %d\n", employee->id, employee->nombre, employee->horasTrabajadas, employee->sueldo);
         }
@@ -620,6 +600,6 @@ FILE* fBinary;
 
     fclose(fBinary);
 
-return 1;
+return ret;
 }
 

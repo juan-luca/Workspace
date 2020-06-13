@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "GeneralCommands.h"
 #include "LinkedList.h"
 #include "Employee.h"
 
@@ -19,11 +18,12 @@ int parser_EmployeeFromText(FILE* pFile, LinkedList* pArrayListEmployee)
 
 
 
-         int i=0;
+
         fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n] \n", cId, nombre, cHoras, cSueldo);
 
    while(!feof(pFile))
    {
+
 
 
        fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n] \n", cId, nombre, cHoras, cSueldo);

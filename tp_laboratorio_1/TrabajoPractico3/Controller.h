@@ -1,3 +1,7 @@
+#include "LinkedList.h"
+#include "Employee.h"
+#include "parser.h"
+
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee);
 int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee);
 int controller_lastId(LinkedList* pArrayListEmployee);
@@ -8,5 +12,6 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee);
 int controller_sortEmployee(LinkedList* pArrayListEmployee);
 int controller_saveAsText(char* path , LinkedList* pArrayListEmployee);
 int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee);
+void cabecera();
 
 

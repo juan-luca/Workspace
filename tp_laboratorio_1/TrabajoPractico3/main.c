@@ -23,13 +23,13 @@
 int main()
 {
     LinkedList* pArrayListEmployee = ll_newLinkedList();
- Employee* employee;
+
 
 
 
 
     /**********************************************************************/
-    int i;
+
       int opc;
       int flagCarga=-1;
 
@@ -56,7 +56,7 @@ int main()
      printf("6. Listar empleados\n");
      printf("7. Ordenar empleados\n");
      printf("8. Guardar los datos de los empleados en el archivo data.csv (modo texto).\n");
-     printf("9. Guardar los datos de los empleados en el archivo data.csv (modo binario).\n");
+     printf("9. Guardar los datos de los empleados en el archivo data.bin (modo binario).\n");
      printf("0. Salir\n");
       opc=getInt("Seleccione una opcion:",0,9);
 
@@ -209,7 +209,13 @@ int main()
             case 8:
                  if(flagCarga==1)
                 {
-
+                    if(controller_saveAsText("data.csv", pArrayListEmployee)!=0)
+                    {
+                     setError("No se pudo guardar el archivo",0);
+                    }else
+                    {
+                        setSucces("Guardado con exito.",0);
+                    }
 
 
                 }else
@@ -222,7 +228,13 @@ int main()
 
                  if(flagCarga==1)
                 {
-
+                    if(controller_saveAsBinary("data.bin", pArrayListEmployee)!=0)
+                    {
+                     setError("No se pudo guardar el archivo",0);
+                    }else
+                    {
+                        setSucces("Guardado con exito.",0);
+                    }
 
 
                 }else

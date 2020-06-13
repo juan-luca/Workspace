@@ -13,20 +13,19 @@ Employee* employee_newParametros(int idStr,char* nombreStr,int horasTrabajadasSt
 void employee_delete();
 
 
-int employee_CompareByName(Employee* e1, Employee* e2);
-int employee_CompareById(Employee* e1, Employee* e2);
+int employee_CompareByName(void* e1, void* e2);
+int employee_CompareById(void* e1, void* e2);
 
-//setters
-int set_id(Employee*, int);
-int set_nombre(Employee*, char*);
-int set_horasTrabajadas(Employee*, int);
-int set_sueldo(Employee*, int);
+int employee_getId(Employee* employee,int* );
+int employee_getNombre(Employee* employee,char* );
+int employee_getHorasTrabajadas(Employee* employee,int* horasTrabajdas);
+int employee_getSueldo(Employee* employee,int* );
 
-//getters
-int get_id(Employee*);
-char* get_nombre(Employee*);
-int get_horasTrabajadas(Employee*);
-int get_sueldo(Employee*);
+int employee_setNombre(Employee* employee,char* );
+int employee_setSueldo(Employee* employee,int sueldo);
+int employee_setId(Employee* employee,int id);
+int employee_setHorasTrabajadas(Employee* employee,int horasTrabajadas);
+
 
 
 #endif // employee_H_INCLUDED

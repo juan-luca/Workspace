@@ -36,18 +36,23 @@ if(noValidar==0)
 void getString(char msg[], char String[]){
 
         int tam;
+        do
+        {
+
+
         printf("%s\n", msg);
         fflush(stdin);
         fgets(String, 31, stdin);
         tam = strlen(String);
         String[tam-1] = '\0';
+        }while(strcmp("",String)==0);
 }
 
 int getIntPos(char mensaje[])
 {
 
     int ValorEntero=0;
-    int noValidar=0;
+
 
 
 

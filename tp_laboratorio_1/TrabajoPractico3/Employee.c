@@ -1,15 +1,15 @@
-#include <stdlib.h>
+
 #include "Employee.h"
-#include <string.h>
+#include "GeneralCommands.h"
 
 
 
-int employee_setNombre(Employee* this,char* nombre)
+int employee_setNombre(Employee* employee,char* nombre)
 {
     int ret = -1;
-    if(this!=NULL && nombre!=NULL)
+    if(employee!=NULL && nombre!=NULL)
     {
-        strcpy(this->nombre,nombre);
+        strcpy(employee->nombre,nombre);
         ret = 0;
     }
 
@@ -37,14 +37,14 @@ void cabecera()
     linea(184);
     printf("\n");
 }
-int employee_getNombre(Employee* this,char* nombre)
+int employee_getNombre(Employee* employee,char* nombre)
 {
     int ret=-1;
 
-    if(this!=NULL )
+    if(employee!=NULL )
     {
 
-        strcpy(nombre,this->nombre);
+        strcpy(nombre,employee->nombre);
         ret=0;
 
     }
@@ -54,24 +54,24 @@ int employee_getNombre(Employee* this,char* nombre)
 
 
 
-int employee_setSueldo(Employee* this,int sueldo)
+int employee_setSueldo(Employee* employee,int sueldo)
 {
     int ret = -1;
-    if(this!=NULL && sueldo!=NULL)
+    if(employee!=NULL )
     {
-        this->sueldo = sueldo;
+        employee->sueldo = sueldo;
         ret = 0;
     }
 
     return ret;
 }
-int employee_getSueldo(Employee* this,int* sueldo)
+int employee_getSueldo(Employee* employee,int* sueldo)
 {
   int ret = -1;
-    if(this!=NULL )
+    if(employee!=NULL )
     {
-        sueldo=this->sueldo;
-        ret=sueldo;
+        *sueldo=employee->sueldo;
+        ret=*sueldo;
 
     }
 
@@ -79,12 +79,12 @@ int employee_getSueldo(Employee* this,int* sueldo)
 
 }
 
-int employee_setId(Employee* this,int id)
+int employee_setId(Employee* employee,int id)
 {
       int ret = -1;
-    if(this!=NULL && id!=NULL)
+    if(employee!=NULL )
     {
-        this->id = id;
+        employee->id = id;
 
         ret = 0;
     }
@@ -92,14 +92,14 @@ int employee_setId(Employee* this,int id)
     return ret;
 
 }
-int employee_getId(Employee* this,int* id)
+int employee_getId(Employee* employee,int* id)
 {
     int ret = -1;
-    if(this!=NULL )
+    if(employee!=NULL )
     {
-        id=this->id;
+        *id=employee->id;
 
-        ret=id;
+        ret=*id;
 
     }
 
@@ -107,24 +107,24 @@ int employee_getId(Employee* this,int* id)
 
 }
 
-int employee_setHorasTrabajadas(Employee* this,int horasTrabajadas)
+int employee_setHorasTrabajadas(Employee* employee,int horasTrabajadas)
 {
      int ret = -1;
-    if(this!=NULL && horasTrabajadas!=NULL)
+    if(employee!=NULL)
     {
-        this->horasTrabajadas = horasTrabajadas;
+        employee->horasTrabajadas = horasTrabajadas;
         ret = 0;
     }
 
     return ret;
 }
-int employee_getHorasTrabajadas(Employee* this,int* horasTrabajdas)
+int employee_getHorasTrabajadas(Employee* employee,int* horasTrabajdas)
 {
     int ret = -1;
-    if(this!=NULL )
+    if(employee!=NULL )
     {
-        horasTrabajdas=this->horasTrabajadas;
-        ret=horasTrabajdas;
+        *horasTrabajdas=employee->horasTrabajadas;
+        ret=*horasTrabajdas;
 
     }
 
@@ -157,16 +157,17 @@ Employee* employee_newParametros(int idStr,char* nombreStr,int horasTrabajadasSt
 
 
 
-int employee_CompareByName(Employee* e1, Employee* e2)
+int employee_CompareByName(void* e1, void* e2)
 {
+        e1 = (Employee*) e1;
+
+        e2 = (Employee*) e2;
 
     int ret=-1;
     char nombre1[128];
     char nombre2[128];
     employee_getNombre(e1,nombre1);
     employee_getNombre(e2,nombre2);
-
-
 
 
     if(e1!=NULL || e2!=NULL)
@@ -176,40 +177,20 @@ int employee_CompareByName(Employee* e1, Employee* e2)
     return ret;
 }
 
-/*int employee_CompareById(Employee* e1, Employee* e2)
+
+
+int employee_CompareById(void* e1, void* e2)
 {
-    int ret=-1;
+    int id1=0;
+    int id2=0;
+
+        e1 = (Employee*) e1;
+
+        e2 = (Employee*) e2;
 
 
-  if(e1!=NULL || e2!=NULL)
-    {
-
-
-
-        if(e1->id > e2->id)
-        {
-            return 1;
-        }
-        else
-        {
-            if(e1->id < e2->id)
-            {
-                ret=2;
-            }
-
-        }
-
-    }
-
-
-    return ret;
-}*/
-
-int employee_CompareById(Employee* e1, Employee* e2)
-{
-    //verificar nulidad
-    int id1=employee_getId(e1,id1);
-    int id2=employee_getId(e2,id2);
+     employee_getId(e1,&id1);
+     employee_getId(e2,&id2);
     int ret;
 
 
