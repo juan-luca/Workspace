@@ -1,0 +1,58 @@
+# depslib dependency file v1.0
+1592610053 source:c:\users\jluca\onedrive\escritorio\workspace\test app trabajopractico 4\controller.c
+	"GeneralCommands.h"
+	"Controller.h"
+
+1592081187 c:\users\jluca\onedrive\escritorio\workspace\test app trabajopractico 4\generalcommands.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1592077957 c:\users\jluca\onedrive\escritorio\workspace\test app trabajopractico 4\controller.h
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1592611259 c:\users\jluca\onedrive\escritorio\workspace\test app trabajopractico 4\linkedlist.h
+
+1592078678 c:\users\jluca\onedrive\escritorio\workspace\test app trabajopractico 4\employee.h
+
+1592078771 c:\users\jluca\onedrive\escritorio\workspace\test app trabajopractico 4\parser.h
+
+1592076771 source:c:\users\jluca\onedrive\escritorio\workspace\test app trabajopractico 4\employee.c
+	"Employee.h"
+	"GeneralCommands.h"
+
+1592525961 source:c:\users\jluca\onedrive\escritorio\workspace\test app trabajopractico 4\generalcommands.c
+	"GeneralCommands.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1593215294 source:c:\users\jluca\onedrive\escritorio\workspace\test app trabajopractico 4\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1592080997 source:c:\users\jluca\onedrive\escritorio\workspace\test app trabajopractico 4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"generalcommands.h"
+
+1592532331 source:c:\users\jluca\onedrive\escritorio\workspace\test app trabajopractico 4\parser.c
+	"GeneralCommands.h"
+	"LinkedList.h"
+	"Employee.h"
+
