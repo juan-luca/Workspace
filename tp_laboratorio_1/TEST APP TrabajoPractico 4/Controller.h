@@ -78,5 +78,5 @@ void cabecera();
 /**
 *-Print on screen the columns
 */
-
+int contains_employee(LinkedList* pArrayListEmployee);
 

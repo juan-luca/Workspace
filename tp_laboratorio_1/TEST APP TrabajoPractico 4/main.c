@@ -22,9 +22,10 @@
 
 int main()
 {
-    caratula();
+    //caratula();
     system("cls");
     LinkedList* pArrayListEmployee = ll_newLinkedList();
+    LinkedList* pArrayListEmployee2 = NULL;
 
 
 
@@ -34,6 +35,9 @@ int main()
 
       int opc;
       int flagCarga=-1;
+
+      int from;
+      int to;
 
     //HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
@@ -59,8 +63,21 @@ int main()
      printf("7. Ordenar empleados\n");
      printf("8. Guardar los datos de los empleados en el archivo data.csv (modo texto).\n");
      printf("9. Guardar los datos de los empleados en el archivo data.bin (modo binario).\n");
+     printf("10. Vaciar lista.\n");
+     printf("11. Buscar empleado.\n");
+     printf("12. Clonar lista a auxiliar.\n");
+     printf("13. Clonar lista a auxiliar desde/hasta.\n");
+     printf("---------------------- LISTA 2 ---------------------- \n");
+     printf("14. Mostrar lista 2.\n");
+     printf("15. Cargar los datos de los empleados desde el archivo data2.csv (modo texto) a la lista 2.\n");
+     printf("16. Cargar los datos de los empleados desde el archivo data2.csv (modo binario) a la lista 2.\n");
+     printf("17. Guardar los datos de los empleados en el archivo data2.csv (modo texto) de la lista 2.\n");
+     printf("18. Guardar los datos de los empleados en el archivo data2.bin (modo binario) de la lista 2.\n");
+     printf("19. Comparar listas.\n");
+
+     printf("9. .\n");
      printf("0. Salir\n");
-      opc=getInt("Seleccione una opcion:",0,9);
+      opc=getInt("Seleccione una opcion:",0,20);
 
       printf("\n");
       linea(112);
@@ -149,6 +166,7 @@ int main()
 
 
             break;
+
             case 5://BAJA EMPLEADO
                 if(flagCarga==1)
                 {
@@ -244,6 +262,228 @@ int main()
                     setError("Primero debe cargar los archivos de datos en la opcion 1 o 2",0);
                 }
                 break;
+
+
+                case 10:
+
+
+                if(flagCarga==1)
+                {
+
+                    if(ll_clear(pArrayListEmployee)!=-1)
+                    {
+                        setSucces("Vaciada con exito.",0);
+
+                    }else
+                    {
+                        setError("No se pudo vaciar la lista.",0);
+                    }
+
+
+                }else
+                {
+                    setError("Primero debe cargar los archivos de datos en la opcion 1 o 2",0);
+                }
+                break;
+
+
+
+
+                case 11:
+
+
+                 if(flagCarga==1)
+                {
+                    if(contains_employee(pArrayListEmployee)!=-1)
+                    {
+
+
+                    }else
+                    {
+                        setError("No se encontro el empleado en la lista.",0);
+                    }
+
+
+                }else
+                {
+                    setError("Primero debe cargar los archivos de datos en la opcion 1 o 2",0);
+                }
+                break;
+
+                case 12:
+
+
+                 if(flagCarga==1)
+                {
+
+                    pArrayListEmployee2=ll_clone(pArrayListEmployee);
+
+                    if(pArrayListEmployee2!=NULL)
+                    {
+                        setSucces("Clonada con exito.",0);
+
+                    }else
+                    {
+                        setError("No se pudo clonar.",0);
+                    }
+
+
+                }else
+                {
+                    setError("Primero debe cargar los archivos de datos en la opcion 1 o 2",0);
+                }
+                break;
+
+                case 13:
+
+
+                 if(flagCarga==1)
+                {
+                    from=getInt("Desde que posicion desea clonar",0,ll_len(pArrayListEmployee));
+                    to=getInt("Hasta que posicion desea clonar",0,ll_len(pArrayListEmployee));
+
+                    pArrayListEmployee2=ll_subList(pArrayListEmployee,from,to);
+
+                    if(pArrayListEmployee2!=NULL)
+                    {
+                        setSucces("Clonada con exito.",0);
+
+                    }else
+                    {
+                        setError("No se pudo clonar.",0);
+                    }
+
+
+                }else
+                {
+                    setError("Primero debe cargar los archivos de datos en la opcion 1 o 2",0);
+                }
+                break;
+
+                case 14:
+                 if(pArrayListEmployee2!=NULL)
+                {
+
+                     if(controller_ListEmployee(pArrayListEmployee2)==-1)
+                    {
+                        setError("No se pudo listar los empleados",0);
+                    }
+
+
+                }else
+                {
+                    setError("Primero debe cargar la segunda lista",0);
+                }
+                break;
+
+                case 15:////carga mediante texto
+
+                if(pArrayListEmployee2!=NULL)
+                {
+                ll_deleteLinkedList(pArrayListEmployee2);
+                pArrayListEmployee2 = ll_newLinkedList();
+                }else
+                {
+                    pArrayListEmployee2 = ll_newLinkedList();
+                }
+
+
+                if(controller_loadFromText("data2.csv",pArrayListEmployee2)!=-1)
+                {
+
+                    setSucces("Carga realizada exitosamente",0);
+
+
+                }else
+                {
+                    setError("No se pudo realizar la carga del archivo, verifique que el data.csv este en el root",0);
+                }
+
+                break;
+            case 16://carga mediante binary text
+
+
+                 if(pArrayListEmployee2!=NULL)
+                {
+                ll_deleteLinkedList(pArrayListEmployee2);
+                pArrayListEmployee2 = ll_newLinkedList();
+                }else
+                {
+                    pArrayListEmployee2 = ll_newLinkedList();
+                }
+
+                if(controller_loadFromBinary("data2.bin",pArrayListEmployee2)!=-1)
+                {
+
+                    setSucces("Carga realizada exitosamente",0);
+                    //flagCarga=1;
+
+                }else
+                {
+                    setError("No se pudo realizar la carga del archivo, verifique que el data.dat este en el root",0);
+                }
+
+                break;
+                case 17:
+                 if(pArrayListEmployee2!=NULL)
+                {
+                    if(controller_saveAsText("data2.csv", pArrayListEmployee2)!=0)
+                    {
+                     setError("No se pudo guardar el archivo",0);
+                    }else
+                    {
+                        setSucces("Guardado con exito.",0);
+                    }
+
+
+                }else
+                {
+                    setError("Primero debe cargar la segunda lista",0);
+                }
+                break;
+            case 18:
+
+
+                 if(pArrayListEmployee2!=NULL)
+                {
+                    if(controller_saveAsBinary("data2.bin", pArrayListEmployee2)!=0)
+                    {
+                     setError("No se pudo guardar el archivo",0);
+                    }else
+                    {
+                        setSucces("Guardado con exito.",0);
+                    }
+
+
+                }else
+                {
+                    setError("Primero debe cargar la segunda lista",0);
+                }
+                break;
+
+        case 19:
+
+
+                 if(pArrayListEmployee2!=NULL && pArrayListEmployee!=NULL)
+                {
+                    printf("\n1 size %d",pArrayListEmployee->size);
+                    printf("\n2 size %d",pArrayListEmployee2->size);
+                    if(ll_containsAll(pArrayListEmployee,pArrayListEmployee2)==-1)
+                    {
+                     printf("|||| Listas diferentes |||| \n");
+                    }else
+                    {
+                        setSucces("|||| Listas identicas |||| ",0);
+                    }
+
+
+                }else
+                {
+                    setError("Primero debe cargar la ambas listas",0);
+                }
+                break;
+
+
 
 
       }

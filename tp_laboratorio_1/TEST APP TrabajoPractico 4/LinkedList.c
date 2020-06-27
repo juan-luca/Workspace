@@ -224,6 +224,7 @@ int ll_add(LinkedList* ll, void* pElement)
 
     if(ll!=NULL)
     {
+
         if(addNode(ll,ll_len(ll),pElement)==0)
         {
             returnAux=0;
@@ -453,13 +454,13 @@ int ll_indexOf(LinkedList* ll, void* pElement)
                         ( 1) Si la lista esta vacia
  *
  */
-int ll_isEmpty(LinkedList* this)
+int ll_isEmpty(LinkedList* ll)
 {
     int returnAux = -1;
 
-    if(this != NULL)
+    if(ll != NULL)
     {
-        if( ll_len(this))
+        if(ll_len(ll))
         {
             returnAux = 0;
         }
@@ -591,12 +592,13 @@ int ll_containsAll(LinkedList* ll,LinkedList* ll2)
 
 
         }
-        if(i==j)
+
+                if(i==j)
                 {
                     returnAux=1;
                 }else
                 {
-                    returnAux=0;
+                    returnAux=-1;
                 }
 
 

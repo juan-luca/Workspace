@@ -111,7 +111,9 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
                     linea(179);
                     printf("\n");
                     employee= employee_newParametros(id,nombre,horas,sueldo);
-                    ret=ll_add(pArrayListEmployee,employee);
+                    //push
+                    ll_push(pArrayListEmployee,pArrayListEmployee->size-1,employee);
+                    ret=0;
 
 
 
@@ -383,8 +385,11 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
     opc=getInt("Desea eliminar el registro? 1=SI o 2=NO",1,2);
     if(opc==1)
     {
-       ret=ll_remove(pArrayListEmployee,i);
+       employee=ll_pop(pArrayListEmployee,i);
+       ret=0;
     }
+
+    printf("Empleado %s eliminado con exito",employee->nombre);
 
 
 
@@ -404,10 +409,16 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
 
     Employee* employee;
     system("cls");
+    if(pArrayListEmployee!=NULL)
+    {
 
     cabecera();
-    for(i=0;i<len;i++)
+
+
+    if(ll_isEmpty(pArrayListEmployee)!=-1)
     {
+        for(i=0;i<len;i++)
+        {
         employee = ll_get(pArrayListEmployee,i);
         employee_getId(employee,&id);
         employee_getNombre(employee,nombre);
@@ -426,9 +437,17 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
         columna();
         printf("\n");
 
-    }
+        }
     linea(184);
     printf("\n");
+    }else
+    {
+        printf("LISTA VACIA\n");
+         ret=0;
+    }
+
+    }
+
     if(i==len)
     {
         ret=0;
@@ -546,7 +565,7 @@ int len =ll_len(pArrayListEmployee);
     Employee* employee;
 FILE* pFile;
 
-pFile = fopen("data.csv","w");
+pFile = fopen(path,"w");
 
  for(i=0; i<len; i++)
     {
@@ -604,6 +623,82 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
 
 
     fclose(fBinary);
+
+return ret;
+}
+
+
+
+int contains_employee(LinkedList* pArrayListEmployee)
+{
+    int len = ll_len(pArrayListEmployee);
+    int i;
+    int id;
+    int horas;
+    int queryId;
+    int lastid;
+    int sueldo;
+    char nombre[128];
+    int ret=-1;
+
+    Employee* employee;
+    system("cls");
+    if(pArrayListEmployee!=NULL)
+    {
+         lastid=controller_lastId(pArrayListEmployee);
+
+
+    Employee* employee;
+
+    id=getInt("Ingrese el ID a buscar",0,lastid);
+
+
+
+    for(i=0;i<len;i++)
+    {
+        employee = employee_new();
+
+        employee = ll_get(pArrayListEmployee,i);
+        employee_getId(employee,&queryId);
+        if(id==queryId)
+        {
+            break;
+        }
+
+    }
+        i=ll_indexOf(pArrayListEmployee,employee);
+        employee = ll_get(pArrayListEmployee,i);
+
+
+    if(ll_contains(pArrayListEmployee,employee)!=-1)
+    {
+        cabecera();
+
+        employee_getId(employee,&id);
+        employee_getNombre(employee,nombre);
+        employee_getHorasTrabajadas(employee,&horas);
+        employee_getSueldo(employee,&sueldo);
+        columna();
+        columna();
+        printf("%6.d   ", id);
+        columna();
+        printf("%128s    ", nombre);
+        columna();
+        printf("%16.d  ", horas);
+        columna();
+        printf("%15.d  ", sueldo);
+        columna();
+        columna();
+        printf("\n");
+        ret=0;
+
+    linea(184);
+    printf("\n");
+    }
+
+    }
+
+
 
 return ret;
 }
