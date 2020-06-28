@@ -22,7 +22,7 @@
 
 int main()
 {
-    //caratula();
+    caratula();
     system("cls");
     LinkedList* pArrayListEmployee = ll_newLinkedList();
     LinkedList* pArrayListEmployee2 = NULL;
@@ -74,8 +74,7 @@ int main()
      printf("17. Guardar los datos de los empleados en el archivo data2.csv (modo texto) de la lista 2.\n");
      printf("18. Guardar los datos de los empleados en el archivo data2.bin (modo binario) de la lista 2.\n");
      printf("19. Comparar listas.\n");
-
-     printf("9. .\n");
+     printf("20. Cambiar empleado de lugar.\n");
      printf("0. Salir\n");
       opc=getInt("Seleccione una opcion:",0,20);
 
@@ -466,8 +465,7 @@ int main()
 
                  if(pArrayListEmployee2!=NULL && pArrayListEmployee!=NULL)
                 {
-                    printf("\n1 size %d",pArrayListEmployee->size);
-                    printf("\n2 size %d",pArrayListEmployee2->size);
+
                     if(ll_containsAll(pArrayListEmployee,pArrayListEmployee2)==-1)
                     {
                      printf("|||| Listas diferentes |||| \n");
@@ -481,6 +479,29 @@ int main()
                 {
                     setError("Primero debe cargar la ambas listas",0);
                 }
+                break;
+
+
+                case 20:
+
+
+
+                  if(pArrayListEmployee2!=NULL)
+                {
+                    if(switch_position(pArrayListEmployee2)!=0)
+                    {
+                     setError("No se pudo cambiar el empleado, verifique el ID ingresado",0);
+                    }else
+                    {
+                        setSucces("Cambiado con exito.",0);
+                    }
+
+
+                }else
+                {
+                    setError("Primero debe cargar la segunda lista",0);
+                }
+
                 break;
 
 

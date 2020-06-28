@@ -2,7 +2,48 @@
 #include "GeneralCommands.h"
 #include "Controller.h"
 
+int switch_position(LinkedList* pArrayListEmployee)
+{
+    int returnAux = -1;
+    int index;
+    int id;
+    int i;
+    int queryID;
 
+
+    Employee* employee;
+
+
+
+    id = getInt("Ingrese el id que desea mover: ",0,controller_lastId(pArrayListEmployee));
+
+    for(i=0;i<ll_len(pArrayListEmployee);i++)
+    {
+            employee = ll_get(pArrayListEmployee,i);
+
+            employee_getId(employee,&queryID);
+
+            if(id==queryID)
+            {
+                break;
+            }
+
+        }
+        if(ll_contains(pArrayListEmployee,employee)!=-1)
+        {
+
+
+                employee=ll_pop(pArrayListEmployee,i);
+
+        index=getInt("Ingresar la posicion en la cual quieras agregarlo",1,ll_len(pArrayListEmployee));
+
+        ll_push(pArrayListEmployee,index-1,employee);
+        returnAux = 0;
+        }
+
+
+return returnAux;
+}
 
 int controller_loadFromText(char* path, LinkedList* pArrayListEmployee)
 {
@@ -641,7 +682,7 @@ int contains_employee(LinkedList* pArrayListEmployee)
     char nombre[128];
     int ret=-1;
 
-    Employee* employee;
+
     system("cls");
     if(pArrayListEmployee!=NULL)
     {

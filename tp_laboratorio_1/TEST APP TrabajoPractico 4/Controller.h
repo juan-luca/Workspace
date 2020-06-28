@@ -1,7 +1,7 @@
 #include "LinkedList.h"
 #include "Employee.h"
 #include "parser.h"
-
+int switch_position(LinkedList* pArrayListEmployee);
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee);
 /**
 *-Create the file and execute the parser loader text file
