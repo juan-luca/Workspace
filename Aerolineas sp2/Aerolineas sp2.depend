@@ -1,0 +1,60 @@
+# depslib dependency file v1.0
+1593521572 source:c:\users\jluca\onedrive\escritorio\workspace\aerolineas sp2\generalcommands.c
+	"GeneralCommands.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1593521581 c:\users\jluca\onedrive\escritorio\workspace\aerolineas sp2\generalcommands.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+
+1593519471 source:c:\users\jluca\onedrive\escritorio\workspace\aerolineas sp2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1593519471 c:\users\jluca\onedrive\escritorio\workspace\aerolineas sp2\linkedlist.h
+
+1593521771 source:c:\users\jluca\onedrive\escritorio\workspace\aerolineas sp2\controller.c
+	"GeneralCommands.h"
+	"Controller.h"
+	"Vuelos.h"
+
+1593521679 c:\users\jluca\onedrive\escritorio\workspace\aerolineas sp2\controller.h
+	"LinkedList.h"
+	"Vuelos.h"
+	"parser.h"
+
+1593483104 c:\users\jluca\onedrive\escritorio\workspace\aerolineas sp2\vuelos.h
+	"LinkedList.h"
+
+1593482689 c:\users\jluca\onedrive\escritorio\workspace\aerolineas sp2\parser.h
+
+1593521572 source:c:\users\jluca\onedrive\escritorio\workspace\aerolineas sp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Vuelos.h"
+	"generalcommands.h"
+
+1593482689 source:c:\users\jluca\onedrive\escritorio\workspace\aerolineas sp2\parser.c
+	"GeneralCommands.h"
+	"Vuelos.h"
+	"LinkedList.h"
+
+1593518115 source:c:\users\jluca\onedrive\escritorio\workspace\aerolineas sp2\vuelos.c
+	"Vuelos.h"
+	"GeneralCommands.h"
+
