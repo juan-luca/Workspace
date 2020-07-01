@@ -68,23 +68,14 @@ int parser_PilotosFromText(FILE* pFile, LinkedList* ll)
 
     int ret=-1;
 
-
-
     Pilotos* pilotos;
 
-
-
-
-
         fscanf(pFile, "%[^,],%[^\n] \n", id, nombre);
-
 
    while(!feof(pFile))
    {
 
-
-
-       fscanf(pFile, "%[^,],%[^\n] \n", id, nombre);
+        fscanf(pFile, "%[^,],%[^\n] \n", id, nombre);
 
 
 

@@ -815,8 +815,6 @@ int ll_count(LinkedList* ll, int (*pFunc)(void*))
     if(ll != NULL &&len>0)
     {
 
-
-
             for(int i=0; i<len; i++)
             {
                 auxpElement=ll_get(ll, i);

@@ -31,9 +31,29 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Controller.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Controller.h" />
+		<Unit filename="GeneralCommands.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="GeneralCommands.h" />
+		<Unit filename="LinkedList.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="LinkedList.h" />
+		<Unit filename="Vuelos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Vuelos.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="parser.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="parser.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

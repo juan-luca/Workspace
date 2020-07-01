@@ -202,6 +202,7 @@ int controller_SantoliquidoPortugalFilter(Vuelos* vuelos)
 
         vuelos_getDestino(vuelos,destino);
        destino[0]=tolower(destino[0]);
+
         if(strcmp(destino,"portugal")==0)
         {
             ret=1;
