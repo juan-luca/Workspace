@@ -1,0 +1,7 @@
+D:\Programming\C#\Baldovino.Carlos\Clase04SobreCarga\bin\Debug\Clase04SobreCarga.exe.config
+D:\Programming\C#\Baldovino.Carlos\Clase04SobreCarga\bin\Debug\Clase04SobreCarga.exe
+D:\Programming\C#\Baldovino.Carlos\Clase04SobreCarga\bin\Debug\Clase04SobreCarga.pdb
+D:\Programming\C#\Baldovino.Carlos\Clase04SobreCarga\obj\Debug\Clase04SobreCarga.csprojAssemblyReference.cache
+D:\Programming\C#\Baldovino.Carlos\Clase04SobreCarga\obj\Debug\Clase04SobreCarga.csproj.CoreCompileInputs.cache
+D:\Programming\C#\Baldovino.Carlos\Clase04SobreCarga\obj\Debug\Clase04SobreCarga.exe
+D:\Programming\C#\Baldovino.Carlos\Clase04SobreCarga\obj\Debug\Clase04SobreCarga.pdb
