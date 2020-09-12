@@ -1,0 +1,14 @@
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\tp_laboratorio_2\Entidades\obj\Debug\netcoreapp3.1\Entidades.csprojAssemblyReference.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\tp_laboratorio_2\Entidades\obj\Debug\netcoreapp3.1\MiCalculadora.FormCalculadora.resources
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\tp_laboratorio_2\Entidades\obj\Debug\netcoreapp3.1\Entidades.MiCalculadora.Properties.Resources.resources
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\tp_laboratorio_2\Entidades\obj\Debug\netcoreapp3.1\Entidades.csproj.GenerateResource.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\tp_laboratorio_2\Entidades\obj\Debug\netcoreapp3.1\Entidades.AssemblyInfoInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\tp_laboratorio_2\Entidades\obj\Debug\netcoreapp3.1\Entidades.AssemblyInfo.cs
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\tp_laboratorio_2\Entidades\obj\Debug\netcoreapp3.1\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Entidades\obj\Debug\netcoreapp3.1\Entidades.csprojAssemblyReference.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Entidades\obj\Debug\netcoreapp3.1\MiCalculadora.FormCalculadora.resources
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Entidades\obj\Debug\netcoreapp3.1\Entidades.MiCalculadora.Properties.Resources.resources
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Entidades\obj\Debug\netcoreapp3.1\Entidades.csproj.GenerateResource.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Entidades\obj\Debug\netcoreapp3.1\Entidades.AssemblyInfoInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Entidades\obj\Debug\netcoreapp3.1\Entidades.AssemblyInfo.cs
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Entidades\obj\Debug\netcoreapp3.1\Entidades.csproj.CoreCompileInputs.cache
