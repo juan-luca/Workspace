@@ -108,7 +108,7 @@
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold);
             this.button4.Location = new System.Drawing.Point(12, 370);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(393, 51);
+            this.button4.Size = new System.Drawing.Size(420, 51);
             this.button4.TabIndex = 6;
             this.button4.Text = "Convertir a Binario";
             this.button4.UseVisualStyleBackColor = false;
@@ -119,9 +119,9 @@
             this.button5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold);
-            this.button5.Location = new System.Drawing.Point(528, 370);
+            this.button5.Location = new System.Drawing.Point(508, 370);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(392, 51);
+            this.button5.Size = new System.Drawing.Size(412, 51);
             this.button5.TabIndex = 7;
             this.button5.Text = "Convertir a Decimal";
             this.button5.UseVisualStyleBackColor = false;
@@ -141,12 +141,12 @@
             // 
             this.Resultado.AutoSize = true;
             this.Resultado.BackColor = System.Drawing.Color.Transparent;
-            this.Resultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Resultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Resultado.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Resultado.Location = new System.Drawing.Point(12, 9);
+            this.Resultado.Location = new System.Drawing.Point(12, 20);
             this.Resultado.MaximumSize = new System.Drawing.Size(950, 0);
             this.Resultado.Name = "Resultado";
-            this.Resultado.Size = new System.Drawing.Size(0, 76);
+            this.Resultado.Size = new System.Drawing.Size(0, 69);
             this.Resultado.TabIndex = 8;
             this.Resultado.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
