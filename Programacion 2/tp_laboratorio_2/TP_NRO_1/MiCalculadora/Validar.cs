@@ -23,14 +23,14 @@ namespace MiCalculadora
             {
                 v.Handled = false;
             }
-            else if (v.KeyChar.ToString().Equals("."))
+            else if (v.KeyChar.ToString().Equals(","))
             {
                 v.Handled = false;
             }
             else
             {
                 v.Handled = true;
-                MessageBox.Show("Solo numeros o numeros con punto decimal");
+                MessageBox.Show("Solo numeros o numeros con coma decimal");
             }
         }
 

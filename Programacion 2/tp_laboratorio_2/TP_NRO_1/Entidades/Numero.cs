@@ -85,8 +85,10 @@ namespace Entidades
         }
         public static string DecimalBinario(string strNumero)
         {
-            Int32 numero = 0;
-            Int32.TryParse(strNumero, out numero);
+            double numeroD = 0;
+            numeroD = Convert.ToDouble(strNumero);
+            int numero = 0;
+            numero = Convert.ToInt32(Math.Abs(numeroD));
             String cadena = "";
 
             
