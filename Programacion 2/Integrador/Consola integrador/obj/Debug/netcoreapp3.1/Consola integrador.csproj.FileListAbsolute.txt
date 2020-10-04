@@ -1,0 +1,16 @@
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\Consola integrador\bin\Debug\netcoreapp3.1\Consola integrador.exe
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\Consola integrador\bin\Debug\netcoreapp3.1\Consola integrador.deps.json
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\Consola integrador\bin\Debug\netcoreapp3.1\Consola integrador.runtimeconfig.json
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\Consola integrador\bin\Debug\netcoreapp3.1\Consola integrador.runtimeconfig.dev.json
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\Consola integrador\bin\Debug\netcoreapp3.1\Consola integrador.dll
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\Consola integrador\bin\Debug\netcoreapp3.1\Consola integrador.pdb
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\Consola integrador\bin\Debug\netcoreapp3.1\Integrador.dll
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\Consola integrador\bin\Debug\netcoreapp3.1\Integrador.pdb
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\Consola integrador\obj\Debug\netcoreapp3.1\Consola integrador.csprojAssemblyReference.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\Consola integrador\obj\Debug\netcoreapp3.1\Consola integrador.AssemblyInfoInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\Consola integrador\obj\Debug\netcoreapp3.1\Consola integrador.AssemblyInfo.cs
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\Consola integrador\obj\Debug\netcoreapp3.1\Consola integrador.csproj.CoreCompileInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\Consola integrador\obj\Debug\netcoreapp3.1\Consola integrador.csproj.CopyComplete
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\Consola integrador\obj\Debug\netcoreapp3.1\Consola integrador.dll
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\Consola integrador\obj\Debug\netcoreapp3.1\Consola integrador.pdb
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\Consola integrador\obj\Debug\netcoreapp3.1\Consola integrador.genruntimeconfig.cache

@@ -1,0 +1,16 @@
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\Principal\bin\Debug\netcoreapp3.1\Principal.exe
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\Principal\bin\Debug\netcoreapp3.1\Principal.deps.json
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\Principal\bin\Debug\netcoreapp3.1\Principal.runtimeconfig.json
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\Principal\bin\Debug\netcoreapp3.1\Principal.runtimeconfig.dev.json
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\Principal\bin\Debug\netcoreapp3.1\Principal.dll
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\Principal\bin\Debug\netcoreapp3.1\Principal.pdb
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\Principal\bin\Debug\netcoreapp3.1\ModeloParcial 1.dll
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\Principal\bin\Debug\netcoreapp3.1\ModeloParcial 1.pdb
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\Principal\obj\Debug\netcoreapp3.1\Principal.csprojAssemblyReference.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\Principal\obj\Debug\netcoreapp3.1\Principal.AssemblyInfoInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\Principal\obj\Debug\netcoreapp3.1\Principal.AssemblyInfo.cs
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\Principal\obj\Debug\netcoreapp3.1\Principal.csproj.CoreCompileInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\Principal\obj\Debug\netcoreapp3.1\Principal.csproj.CopyComplete
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\Principal\obj\Debug\netcoreapp3.1\Principal.dll
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\Principal\obj\Debug\netcoreapp3.1\Principal.pdb
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\Principal\obj\Debug\netcoreapp3.1\Principal.genruntimeconfig.cache

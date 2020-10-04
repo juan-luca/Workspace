@@ -1,0 +1,6 @@
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\bin\Debug\ModeloParcial 1.dll
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\bin\Debug\ModeloParcial 1.pdb
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\obj\Debug\ModeloParcial 1.csprojAssemblyReference.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\obj\Debug\ModeloParcial 1.csproj.CoreCompileInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\obj\Debug\ModeloParcial 1.dll
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\ModeloParcial 1\obj\Debug\ModeloParcial 1.pdb

@@ -1,0 +1,6 @@
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\bin\Debug\Integrador.dll
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\bin\Debug\Integrador.pdb
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\obj\Debug\Integrador.csprojAssemblyReference.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\obj\Debug\Integrador.csproj.CoreCompileInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\obj\Debug\Integrador.dll
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Integrador\obj\Debug\Integrador.pdb
