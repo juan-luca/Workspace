@@ -1,0 +1,6 @@
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\TP GENERICS\TP GENERICS 2\Entidades2\obj\Debug\Entidades2.csprojAssemblyReference.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\TP GENERICS\TP GENERICS 2\Entidades2\obj\Debug\Entidades2.csproj.CoreCompileInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\TP GENERICS\TP GENERICS 2\Entidades2\bin\Debug\Entidades.dll
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\TP GENERICS\TP GENERICS 2\Entidades2\bin\Debug\Entidades.pdb
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\TP GENERICS\TP GENERICS 2\Entidades2\obj\Debug\Entidades.dll
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\TP GENERICS\TP GENERICS 2\Entidades2\obj\Debug\Entidades.pdb

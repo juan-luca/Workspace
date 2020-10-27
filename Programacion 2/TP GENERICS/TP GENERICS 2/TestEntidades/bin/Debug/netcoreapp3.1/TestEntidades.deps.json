@@ -1,0 +1,58 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "TestEntidades/1.0.0": {
+        "dependencies": {
+          "Deposito": "1.0.0",
+          "Entidades2": "1.0.0",
+          "EntidadesAutos": "1.0.0"
+        },
+        "runtime": {
+          "TestEntidades.dll": {}
+        }
+      },
+      "Deposito/1.0.0": {
+        "runtime": {
+          "Deposito.dll": {}
+        }
+      },
+      "Entidades2/1.0.0": {
+        "runtime": {
+          "Entidades.dll": {}
+        }
+      },
+      "EntidadesAutos/1.0.0": {
+        "runtime": {
+          "EntidadesAutos.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TestEntidades/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Deposito/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Entidades2/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EntidadesAutos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

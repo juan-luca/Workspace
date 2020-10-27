@@ -1,0 +1,6 @@
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\TP GENERICS\TP GENERICS 2\Deposito\bin\Debug\Deposito.dll
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\TP GENERICS\TP GENERICS 2\Deposito\bin\Debug\Deposito.pdb
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\TP GENERICS\TP GENERICS 2\Deposito\obj\Debug\Deposito.csprojAssemblyReference.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\TP GENERICS\TP GENERICS 2\Deposito\obj\Debug\Deposito.csproj.CoreCompileInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\TP GENERICS\TP GENERICS 2\Deposito\obj\Debug\Deposito.dll
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\TP GENERICS\TP GENERICS 2\Deposito\obj\Debug\Deposito.pdb

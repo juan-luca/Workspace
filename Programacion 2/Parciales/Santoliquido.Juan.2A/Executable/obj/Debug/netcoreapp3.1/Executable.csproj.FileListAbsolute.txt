@@ -1,0 +1,16 @@
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Parciales\Santoliquido.Juan.2A\Executable\bin\Debug\netcoreapp3.1\Executable.exe
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Parciales\Santoliquido.Juan.2A\Executable\bin\Debug\netcoreapp3.1\Executable.deps.json
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Parciales\Santoliquido.Juan.2A\Executable\bin\Debug\netcoreapp3.1\Executable.runtimeconfig.json
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Parciales\Santoliquido.Juan.2A\Executable\bin\Debug\netcoreapp3.1\Executable.runtimeconfig.dev.json
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Parciales\Santoliquido.Juan.2A\Executable\bin\Debug\netcoreapp3.1\Executable.dll
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Parciales\Santoliquido.Juan.2A\Executable\bin\Debug\netcoreapp3.1\Executable.pdb
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Parciales\Santoliquido.Juan.2A\Executable\bin\Debug\netcoreapp3.1\Entidades.dll
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Parciales\Santoliquido.Juan.2A\Executable\bin\Debug\netcoreapp3.1\Entidades.pdb
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Parciales\Santoliquido.Juan.2A\Executable\obj\Debug\netcoreapp3.1\Executable.csprojAssemblyReference.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Parciales\Santoliquido.Juan.2A\Executable\obj\Debug\netcoreapp3.1\Executable.AssemblyInfoInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Parciales\Santoliquido.Juan.2A\Executable\obj\Debug\netcoreapp3.1\Executable.AssemblyInfo.cs
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Parciales\Santoliquido.Juan.2A\Executable\obj\Debug\netcoreapp3.1\Executable.csproj.CoreCompileInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Parciales\Santoliquido.Juan.2A\Executable\obj\Debug\netcoreapp3.1\Executable.csproj.CopyComplete
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Parciales\Santoliquido.Juan.2A\Executable\obj\Debug\netcoreapp3.1\Executable.dll
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Parciales\Santoliquido.Juan.2A\Executable\obj\Debug\netcoreapp3.1\Executable.pdb
+C:\Users\jluca\OneDrive\Escritorio\Workspace\Programacion 2\Parciales\Santoliquido.Juan.2A\Executable\obj\Debug\netcoreapp3.1\Executable.genruntimeconfig.cache

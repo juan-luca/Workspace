@@ -1,0 +1,123 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Deposito/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Deposito.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Deposito.dll": {}
+        }
+      },
+      "Entidades2/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Entidades2.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entidades2.dll": {}
+        }
+      },
+      "EntidadesAutos/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/EntidadesAutos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EntidadesAutos.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Deposito/1.0.0": {
+      "type": "project",
+      "path": "../Deposito/Deposito.csproj",
+      "msbuildProject": "../Deposito/Deposito.csproj"
+    },
+    "Entidades2/1.0.0": {
+      "type": "project",
+      "path": "../Entidades2/Entidades2.csproj",
+      "msbuildProject": "../Entidades2/Entidades2.csproj"
+    },
+    "EntidadesAutos/1.0.0": {
+      "type": "project",
+      "path": "../EntidadesAutos/EntidadesAutos.csproj",
+      "msbuildProject": "../EntidadesAutos/EntidadesAutos.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "Deposito >= 1.0.0",
+      "Entidades2 >= 1.0.0",
+      "EntidadesAutos >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\jluca\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\jluca\\OneDrive\\Escritorio\\Workspace\\Programacion 2\\TP GENERICS\\TP GENERICS 2\\TestEntidades\\TestEntidades.csproj",
+      "projectName": "TestEntidades",
+      "projectPath": "C:\\Users\\jluca\\OneDrive\\Escritorio\\Workspace\\Programacion 2\\TP GENERICS\\TP GENERICS 2\\TestEntidades\\TestEntidades.csproj",
+      "packagesPath": "C:\\Users\\jluca\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jluca\\OneDrive\\Escritorio\\Workspace\\Programacion 2\\TP GENERICS\\TP GENERICS 2\\TestEntidades\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\jluca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "projectReferences": {
+            "C:\\Users\\jluca\\OneDrive\\Escritorio\\Workspace\\Programacion 2\\TP GENERICS\\TP GENERICS 2\\Deposito\\Deposito.csproj": {
+              "projectPath": "C:\\Users\\jluca\\OneDrive\\Escritorio\\Workspace\\Programacion 2\\TP GENERICS\\TP GENERICS 2\\Deposito\\Deposito.csproj"
+            },
+            "C:\\Users\\jluca\\OneDrive\\Escritorio\\Workspace\\Programacion 2\\TP GENERICS\\TP GENERICS 2\\Entidades2\\Entidades2.csproj": {
+              "projectPath": "C:\\Users\\jluca\\OneDrive\\Escritorio\\Workspace\\Programacion 2\\TP GENERICS\\TP GENERICS 2\\Entidades2\\Entidades2.csproj"
+            },
+            "C:\\Users\\jluca\\OneDrive\\Escritorio\\Workspace\\Programacion 2\\TP GENERICS\\TP GENERICS 2\\EntidadesAutos\\EntidadesAutos.csproj": {
+              "projectPath": "C:\\Users\\jluca\\OneDrive\\Escritorio\\Workspace\\Programacion 2\\TP GENERICS\\TP GENERICS 2\\EntidadesAutos\\EntidadesAutos.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
